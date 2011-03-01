@@ -1,0 +1,11 @@
+[alias]
+	st = status
+	ss = status -sb
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	dc = diff --cached
+	wd = diff --word-diff
+[color]
+	ui = auto
