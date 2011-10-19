@@ -1,11 +1,26 @@
 [alias]
 	st = status
 	ss = status -sb
+	ad = add
+	adp = add -p
 	ci = commit
+	cm = commit -m
+	cam = commit --amend
+	chr = cherry -v
+	chp = cherry-pick
 	br = branch
+	ba = branch -a
 	co = checkout
 	df = diff
 	dc = diff --cached
-	wd = diff --word-diff
+	dw = diff --word-diff
+	up = pull --rebase
+	rbm = rebase master
+	ls = log --stat
+	lp = log -p
+	l1 = log --oneline
 [color]
 	ui = auto
+[core]
+	excludesfile = ~/.gitexclude
+	editor = vim
