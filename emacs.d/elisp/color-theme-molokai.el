@@ -13,10 +13,12 @@
   (color-theme-install
    '(color-theme-molokai
      ((foreground-color . "#F8F8F2")
-      (background-color . "#1B1D1E")
+;;      (background-color . "#1B1D1E")
+      (background-color . nil)
       (cursor-color . "#F8F8F0")
       (background-mode . dark))
-     (default ((t (:foreground "#F8F8F2" :background "#1B1D1E"))))
+;;     (default ((t (:foreground "#F8F8F2" :background "#1B1D1E"))))
+     (default ((t (:foreground "#F8F8F2" :background nil))))
      (bold ((t (:weight bold))))
      (bold-italic ((t (:weight bold :slant italic))))
      (custom-face-tag ((t (:foreground "#66D9EF" :weight bold))))
