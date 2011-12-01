@@ -3,6 +3,7 @@ defencoding UTF-8
 encoding UTF-8 UTF-8
 hardstatus alwayslastline "%{= wk}%-Lw%{= bw}%n%f* %t%{-}%+Lw%=%{= wr}[%h]%{= gk} %Y/%m/%d %c:%s"
 startup_message off
+vbell off
 
 termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
 termcapinfo xterm-color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
