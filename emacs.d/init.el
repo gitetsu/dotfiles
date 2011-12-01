@@ -69,3 +69,13 @@
 	    '(lambda ()
 	         (setq tab-width 2)
 		      (setq indent-tabs-mode nil)))
+
+;; sr-speedbar
+;; install-elisp-from-emacswiki
+(require 'sr-speedbar)
+(setq sr-speedbar-right-side nil)
+
+;; AceJump
+;; https://raw.github.com/winterTTr/ace-jump-mode/770419b7f67424c6559e5090d860c5328b81a599/ace-jump-mode.el
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c p") 'ace-jump-mode)
