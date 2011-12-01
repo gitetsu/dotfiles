@@ -19,6 +19,9 @@
 	ls = log --stat
 	lp = log -p
 	l1 = log --oneline
+	sb = show-branch master HEAD
+	sl = stash list
+	sp = stash pop
 [color]
 	ui = auto
 [core]
