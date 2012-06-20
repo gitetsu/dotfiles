@@ -1,2 +1,10 @@
 "\C-p": history-search-backward
 "\C-n": history-search-forward
+
+set match-hidden-files off
+
+set visible-stats on
+
+set input-meta on
+set output-meta on
+set convert-meta off
