@@ -27,3 +27,5 @@
 [core]
 	excludesfile = ~/.gitexclude
 	editor = vim
+[push]
+	default = current
