@@ -27,6 +27,3 @@
 [core]
 	excludesfile = ~/.gitexclude
 	editor = vim
-[user]
-	name = gitetsu
-	email = enhanced.ttssd+github@gmail.com
