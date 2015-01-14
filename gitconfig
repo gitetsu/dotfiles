@@ -27,5 +27,7 @@
 [core]
 	excludesfile = ~/.gitexclude
 	editor = vim
+	quotepath = false
+	precomposeunicode = true
 [push]
 	default = current
