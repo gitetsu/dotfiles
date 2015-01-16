@@ -1,0 +1,2 @@
+bind "^r" em-inc-search-prev
+bind "^w" ed-delete-prev-word
