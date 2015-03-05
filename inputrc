@@ -1,6 +1,10 @@
 "\C-p": history-search-backward
 "\C-n": history-search-forward
 
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set completion-map-case on
+
 set match-hidden-files off
 
 set visible-stats on
