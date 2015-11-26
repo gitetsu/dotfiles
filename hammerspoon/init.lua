@@ -16,11 +16,12 @@ function reloadConfig(files)
 end
 
 function focusWithMouse(app)
+  local beforeScreen = hs.window.focusedWindow():screen()
   if hs.application.launchOrFocus(app) then
-    if #hs.screen.allScreens() > 1 then
-      local screen = hs.window.focusedWindow():screen()
-      local geo = screen:frame()
-      hs.mouse.setRelativePosition({x=geo.w / 2, y=geo.h / 2}, screen)
+    local afterScreen = hs.window.focusedWindow():screen()
+    if #hs.screen.allScreens() > 1 and beforeScreen ~= afterScreen then
+      local geo = afterScreen:frame()
+      hs.mouse.setRelativePosition({x=geo.w / 2, y=geo.h / 2}, afterScreen)
     end
   end
 end
