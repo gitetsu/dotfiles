@@ -1,5 +1,5 @@
 function modifier()
-  return {"alt", "shift"}
+  return {"shift", "ctrl"}
 end
 
 function reloadConfig(files)
