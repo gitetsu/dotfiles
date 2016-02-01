@@ -15,6 +15,7 @@
 	dc = diff --cached
 	dw = diff --word-diff
 	up = pull --rebase
+	rb = rebase
 	rbm = rebase master
 	ls = log --stat
 	lp = log -p
