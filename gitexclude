@@ -1,0 +1,6 @@
+tags
+*.swp
+*.swo
+.agignore
+Session.vim
+.local*.vimrc
