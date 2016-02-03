@@ -32,3 +32,5 @@
 	precomposeunicode = true
 [push]
 	default = current
+[ghq]
+	root = ~/repos
