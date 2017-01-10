@@ -1,9 +1,10 @@
+-- local.luaからも参照するのでグローバル
 function modifier()
   return {"shift", "ctrl"}
 end
 
-function reloadConfig(files)
-  doReload = false
+local function reloadConfig(files)
+  local doReload = false
   for _,file in pairs(files) do
     if file:sub(-4) == ".lua" then
       doReload = true
@@ -15,7 +16,7 @@ function reloadConfig(files)
   end
 end
 
-function focusWithMouse(app)
+local function focusWithMouse(app)
   local beforeScreen = hs.window.focusedWindow():screen()
   if hs.application.launchOrFocus(app) then
     local afterScreen = hs.window.focusedWindow():screen()
