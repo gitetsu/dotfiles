@@ -52,32 +52,36 @@ local function remapKey(modifiers, key, keyCode)
   hs.hotkey.bind(modifiers, key, keyCode, nil, keyCode)
 end
 
-local function disableAllHotkeys()
-  for k, v in pairs(hs.hotkey.getHotkeys()) do
-    v['_hk']:disable()
-  end
+local function disableCtrlHotkeys(hotkeys)
+  hs.fnutils.each(hotkeys, function(hotkey)
+    hs.hotkey.disableAll(hotkey.modifiers, hotkey.key)
+  end)
 end
 
-local function enableAllHotkeys()
-  for k, v in pairs(hs.hotkey.getHotkeys()) do
-    v['_hk']:enable()
-  end
+local function enableCtrlHotkeys(hotkeys)
+  hs.fnutils.each(hotkeys, function(hotkey)
+    remapKey(hotkey.modifiers, hotkey.key, keyCode(hotkey.code))
+  end)
+end
+
+local function ctrlKeys()
+  return {
+    { modifiers = {'ctrl'}, key = 'd', code = 'forwarddelete' },
+    { modifiers = {'ctrl'}, key = 'h', code = 'delete' },
+    { modifiers = {'ctrl'}, key = 'j', code = 'return' },
+    { modifiers = {'ctrl'}, key = '[', code = 'escape' },
+  }
 end
 
 local function handleGlobalAppEvent(name, event, app)
   if event == hs.application.watcher.activated then
     if name == "iTerm2" then
-      disableAllHotkeys()
+      disableCtrlHotkeys(ctrlKeys())
     else
-      enableAllHotkeys()
+      enableCtrlHotkeys(ctrlKeys())
     end
   end
 end
 
 appsWatcher = hs.application.watcher.new(handleGlobalAppEvent)
 appsWatcher:start()
-
-remapKey({'ctrl'}, 'd', keyCode('forwarddelete'))
-remapKey({'ctrl'}, 'h', keyCode('delete'))
-remapKey({'ctrl'}, 'j', keyCode('return'))
-remapKey({'ctrl'}, '[', keyCode('escape'))
