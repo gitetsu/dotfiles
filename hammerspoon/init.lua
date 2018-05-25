@@ -16,7 +16,7 @@ local function reloadConfig(files)
   end
 end
 
-local function focusWithMouse(app)
+function focusWithMouse(app)
   local beforeScreen = hs.window.focusedWindow():screen()
   if hs.application.launchOrFocus(app) then
     local afterScreen = hs.window.focusedWindow():screen()
