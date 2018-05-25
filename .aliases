@@ -1,0 +1,12 @@
+if type exa > /dev/null 2>&1; then
+  alias l="exa -lgF"
+  alias la="exa -lgaF"
+else
+  if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag="--color"
+  else # OS X `ls`
+    colorflag="-G"
+  fi
+  alias l="ls -lF ${colorflag}"
+  alias la="ls -laF ${colorflag}"
+fi
