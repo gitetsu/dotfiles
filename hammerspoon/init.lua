@@ -38,6 +38,7 @@ hs.hotkey.bind(modifier(), "d", function() focusWithMouse("Dictionary") end)
 hs.hotkey.bind(modifier(), "f", function() focusWithMouse("Finder") end)
 hs.hotkey.bind(modifier(), "g", function() focusWithMouse("Google Chrome") end)
 hs.hotkey.bind(modifier(), "i", function() focusWithMouse("iTerm") end)
+hs.hotkey.bind(modifier(), "k", function() focusWithMouse("Kindle") end)
 hs.hotkey.bind(modifier(), "s", function() focusWithMouse("System Preferences") end)
 hs.hotkey.bind(modifier(), "v", function() focusWithMouse("MacVim") end)
 
