@@ -10,3 +10,12 @@ else
   alias l="ls -lF ${colorflag}"
   alias la="ls -laF ${colorflag}"
 fi
+
+alias b="brew"
+alias c="composer"
+alias d="docker"
+alias dco="docker-compose"
+alias g="hub"
+alias mk="minikube"
+alias kc="kubectl"
+alias v="vim"
