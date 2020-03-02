@@ -3,19 +3,6 @@ function modifier()
   return {"shift", "ctrl"}
 end
 
-local function reloadConfig(files)
-  local doReload = false
-  for _,file in pairs(files) do
-    if file:sub(-4) == ".lua" then
-      doReload = true
-    end
-  end
-  if doReload then
-    hs.reload()
-    hs.notify.new({title="Hammerspoon", informativeText="Config reloaded"}):send()
-  end
-end
-
 function focusWithMouse(app)
   local beforeScreen = hs.window.focusedWindow():screen()
   if hs.application.launchOrFocus(app) then
@@ -27,8 +14,8 @@ function focusWithMouse(app)
   end
 end
 
-configFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig)
-configFileWatcher:start()
+hs.loadSpoon("ReloadConfiguration")
+spoon.ReloadConfiguration:start()
 
 require ("local")
 
