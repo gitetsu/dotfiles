@@ -34,4 +34,9 @@ if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
-export SPACESHIP_CHAR_SYMBOL="⋱ "
+export SPACESHIP_PROMPT_ADD_NEWLINE=false
+export SPACESHIP_PROMPT_SEPARATE_LINE=false
+export SPACESHIP_CHAR_SYMBOL="⋱  "
+export SPACESHIP_EXIT_CODE_SHOW=true
+export SPACESHIP_EXIT_CODE_SYMBOL="✘ "
+export SPACESHIP_CHAR_PREFIX="$NEWLINE"
