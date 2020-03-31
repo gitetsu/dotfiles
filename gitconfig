@@ -34,3 +34,5 @@
 	default = current
 [ghq]
 	root = ~/repos
+[user]
+	useConfigOnly = true
