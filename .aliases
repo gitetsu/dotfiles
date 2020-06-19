@@ -12,7 +12,7 @@ else
 fi
 
 alias b="brew"
-alias c="composer"
+alias c="COMPOSER_MEMORY_LIMIT=-1 composer"
 alias d="docker"
 alias dco="docker-compose"
 alias g="hub"
