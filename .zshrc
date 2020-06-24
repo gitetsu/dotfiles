@@ -12,18 +12,18 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
-zinit for \
-  light-mode denysdovhan/spaceship-prompt \
-  light-mode zdharma/fast-syntax-highlighting
+zinit light-mode for \
+  denysdovhan/spaceship-prompt \
+  zdharma/fast-syntax-highlighting
 
-zinit lucid wait'!0' for \
-  light-mode mafredri/zsh-async \
-  light-mode zsh-users/zsh-autosuggestions \
-  light-mode zdharma/history-search-multi-word \
-  light-mode zsh-users/zsh-completions \
-  light-mode mollifier/anyframe \
-  light-mode b4b4r07/emoji-cli \
-  light-mode b4b4r07/enhancd
+zinit wait'!0' light-mode lucid for \
+  mafredri/zsh-async \
+  zsh-users/zsh-autosuggestions \
+  zdharma/history-search-multi-word \
+  zsh-users/zsh-completions \
+  mollifier/anyframe \
+  b4b4r07/emoji-cli \
+  b4b4r07/enhancd
 
 bindkey -e
 bindkey '^x^g' anyframe-widget-cd-ghq-repository
