@@ -1,18 +1,29 @@
-### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin installer's chunk
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-zplugin light "mafredri/zsh-async"
-zplugin light "denysdovhan/spaceship-prompt"
-zplugin light "zsh-users/zsh-autosuggestions"
-zplugin light "zdharma/fast-syntax-highlighting"
-zplugin light "zdharma/history-search-multi-word"
-zplugin light "zsh-users/zsh-completions"
-zplugin light "mollifier/anyframe"
-zplugin light "b4b4r07/emoji-cli"
-zplugin light "b4b4r07/enhancd"
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
+
+zinit for \
+  light-mode denysdovhan/spaceship-prompt \
+  light-mode zdharma/fast-syntax-highlighting
+
+zinit lucid wait'!0' for \
+  light-mode mafredri/zsh-async \
+  light-mode zsh-users/zsh-autosuggestions \
+  light-mode zdharma/history-search-multi-word \
+  light-mode zsh-users/zsh-completions \
+  light-mode mollifier/anyframe \
+  light-mode b4b4r07/emoji-cli \
+  light-mode b4b4r07/enhancd
 
 bindkey -e
 bindkey '^x^g' anyframe-widget-cd-ghq-repository
