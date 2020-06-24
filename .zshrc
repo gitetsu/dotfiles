@@ -23,7 +23,8 @@ zinit wait'!0' light-mode lucid for \
   zsh-users/zsh-completions \
   mollifier/anyframe \
   b4b4r07/emoji-cli \
-  b4b4r07/enhancd
+  b4b4r07/enhancd \
+  hlissner/zsh-autopair
 
 bindkey -e
 bindkey '^x^g' anyframe-widget-cd-ghq-repository
