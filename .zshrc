@@ -14,21 +14,26 @@ autoload -Uz _zinit
 
 zinit light-mode for \
   denysdovhan/spaceship-prompt \
-  zdharma/fast-syntax-highlighting
+
+zinit wait lucid light-mode for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions \
+  blockf atpull'zinit creinstall -q .' \
+      zsh-users/zsh-completions
 
 zinit wait'!0' light-mode lucid for \
   mafredri/zsh-async \
-  zsh-users/zsh-autosuggestions \
   zdharma/history-search-multi-word \
-  zsh-users/zsh-completions \
-  mollifier/anyframe \
-  b4b4r07/emoji-cli \
+  atload"bindkey '^x^g' anyframe-widget-cd-ghq-repository" \
+    mollifier/anyframe \
+  atload"bindkey '^x^e' emoji::cli" \
+    b4b4r07/emoji-cli \
   b4b4r07/enhancd \
   hlissner/zsh-autopair
 
 bindkey -e
-bindkey '^x^g' anyframe-widget-cd-ghq-repository
-bindkey '^x^e' emoji::cli
 
 source ~/.aliases
 source ~/.exports
