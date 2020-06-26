@@ -31,7 +31,32 @@ zinit wait'!0' light-mode lucid for \
   atload"bindkey '^x^e' emoji::cli" \
     b4b4r07/emoji-cli \
   b4b4r07/enhancd \
-  hlissner/zsh-autopair
+  hlissner/zsh-autopair \
+  atload'_fzf-widgets-config' \
+    ytet5uy4/fzf-widgets
+
+_fzf-widgets-config () {
+  bindkey '^[ds'  fzf-select-docker-widget
+  bindkey '^[dc' fzf-docker-remove-containers
+  bindkey '^[di' fzf-docker-remove-images
+  bindkey '^[dv' fzf-docker-remove-volumes
+
+  bindkey '^[e.' fzf-edit-dotfiles
+  bindkey '^[ef' fzf-edit-files
+
+  bindkey '^[gs' fzf-select-git-widget
+  bindkey '^[ga' fzf-git-add-files
+  bindkey '^[gb' fzf-git-checkout-branch
+  bindkey '^[gc' fzf-git-change-repository
+  bindkey '^[gd' fzf-git-delete-branches
+
+  bindkey '^[if' fzf-insert-files
+  bindkey '^[id' fzf-insert-directory
+
+  bindkey '^[kp' fzf-kill-processes
+
+  bindkey '^[ss' fzf-exec-ssh
+}
 
 bindkey -e
 bindkey '^p' history-beginning-search-backward
