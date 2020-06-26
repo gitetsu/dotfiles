@@ -33,7 +33,9 @@ zinit wait'!0' light-mode lucid for \
   b4b4r07/enhancd \
   hlissner/zsh-autopair \
   atload'_fzf-widgets-config' \
-    ytet5uy4/fzf-widgets
+    ytet5uy4/fzf-widgets \
+  atinit"alias gdc='gd --cached'" \
+    wfxr/forgit
 
 _anyframe-config () {
   zle -N _anyframe-gitmoji{,}
