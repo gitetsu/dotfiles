@@ -1,4 +1,8 @@
 # Create a new directory and enter it
 function mkd() {
-    mkdir -p "$@" && cd "$_";
+  mkdir -p "$@" && cd "$_";
+}
+
+function ghp() {
+  gh pr create -t "$(git log -1 --pretty=%s)"
 }
