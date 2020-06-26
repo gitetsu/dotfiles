@@ -61,8 +61,8 @@ _fzf-widgets-config () {
   bindkey '^[gs' fzf-select-git-widget
   bindkey '^[ga' fzf-git-add-files
   bindkey '^[gb' fzf-git-checkout-branch
-  bindkey '^[gc' fzf-git-change-repository
   bindkey '^[gd' fzf-git-delete-branches
+  bindkey '^[gr' fzf-git-change-repository
 
   bindkey '^[if' fzf-insert-files
   bindkey '^[id' fzf-insert-directory
