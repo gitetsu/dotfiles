@@ -26,7 +26,7 @@ zinit wait lucid light-mode for \
 zinit wait'!0' light-mode lucid for \
   mafredri/zsh-async \
   zdharma/history-search-multi-word \
-  atload"bindkey '^x^g' anyframe-widget-cd-ghq-repository" \
+  atload"_anyframe-config" \
     mollifier/anyframe \
   atload"bindkey '^x^e' emoji::cli" \
     b4b4r07/emoji-cli \
@@ -34,6 +34,18 @@ zinit wait'!0' light-mode lucid for \
   hlissner/zsh-autopair \
   atload'_fzf-widgets-config' \
     ytet5uy4/fzf-widgets
+
+_anyframe-config () {
+  zle -N _anyframe-gitmoji{,}
+  bindkey '^[ig' _anyframe-gitmoji
+}
+
+_anyframe-gitmoji () {
+  gitmoji -l \
+    | anyframe-selector-auto \
+    | awk '{print $3}' \
+    | anyframe-action-insert
+}
 
 _fzf-widgets-config () {
   bindkey '^[ds'  fzf-select-docker-widget
