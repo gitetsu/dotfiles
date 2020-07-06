@@ -17,11 +17,7 @@ end
 hs.loadSpoon("ReloadConfiguration")
 spoon.ReloadConfiguration:start()
 
-local f = io.open("local", "r")
-if f ~= nil then
-  io.close(f)
-  require ("local")
-end
+require ("local")
 
 hs.hotkey.bind(modifier(), "a", function() focusWithMouse("Activity Monitor") end)
 hs.hotkey.bind(modifier(), "b", function() focusWithMouse("Vivaldi") end)
