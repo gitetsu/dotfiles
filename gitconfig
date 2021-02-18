@@ -12,6 +12,7 @@
 	dc = diff --cached
 	df = diff
 	dw = diff --word-diff
+	lastid = "! git config user.name \"$(git log -1 --format=%an)\" ; git config user.email \"$(git log -1 --format=%ae)\"; :"
 	l1 = log --oneline
 	lp = log -p
 	ls = log --stat
