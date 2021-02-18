@@ -1,28 +1,28 @@
 [alias]
-	st = status
-	ss = status -sb
 	ad = add
 	adp = add -p
+	ba = branch -a
+	br = branch
+	cam = commit --amend
+	chp = cherry-pick
+	chr = cherry -v
 	ci = commit
 	cm = commit -m
-	cam = commit --amend
-	chr = cherry -v
-	chp = cherry-pick
-	br = branch
-	ba = branch -a
 	co = checkout
-	df = diff
 	dc = diff --cached
+	df = diff
 	dw = diff --word-diff
-	up = pull --rebase
+	l1 = log --oneline
+	lp = log -p
+	ls = log --stat
 	rb = rebase
 	rbm = rebase master
-	ls = log --stat
-	lp = log -p
-	l1 = log --oneline
 	sb = show-branch master HEAD
 	sl = stash list
 	sp = stash pop
+	ss = status -sb
+	st = status
+	up = pull --rebase
 [color]
 	ui = auto
 [core]
