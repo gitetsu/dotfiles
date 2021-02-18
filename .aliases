@@ -11,7 +11,6 @@ else
   alias la="ls -laF ${colorflag}"
 fi
 
-alias b="brew"
 alias c="COMPOSER_MEMORY_LIMIT=-1 composer"
 alias d="docker"
 alias dco="docker-compose"

@@ -6,3 +6,26 @@ function mkd() {
 function ghp() {
   gh pr create -t "$(git log -1 --pretty=%s)"
 }
+
+function b() {
+  case $1 in
+    c)
+      shift
+      command brew cleanup $@
+      ;;
+    i)
+      shift
+      command brew install $@
+      ;;
+    r)
+      shift
+      command brew remove $@
+      ;;
+    s)
+      shift
+      command brew search $@
+      ;;
+    *)
+      command brew $@
+  esac
+}
