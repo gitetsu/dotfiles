@@ -1,8 +1,5 @@
 
-install: emacs screen gitconfig inputrc
-
-emacs:
-	ln -s `pwd`/emacs.d ${HOME}/.emacs.d
+install: screen gitconfig inputrc
 
 screen:
 	ln -fs `pwd`/screenrc ${HOME}/.screenrc
@@ -13,4 +10,4 @@ gitconfig:
 inputrc:
 	ln -fs `pwd`/inputrc ${HOME}/.inputrc
 
-.PHONY: install emacs screen gitconfig inputrc
+.PHONY: install screen gitconfig inputrc
