@@ -77,6 +77,7 @@ _fzf-widgets-config () {
 bindkey -e
 bindkey '^p' history-beginning-search-backward
 bindkey '^n' history-beginning-search-forward
+bindkey '^x^d' kill-word
 
 source ~/.aliases
 source ~/.exports
