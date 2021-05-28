@@ -35,7 +35,9 @@ zinit wait'!0' light-mode lucid for \
   atload'_fzf-widgets-config' \
     ytet5uy4/fzf-widgets \
   atinit"alias gdc='gd --cached'" \
-    wfxr/forgit
+    wfxr/forgit \
+  atload"bindkey '^x^f' zce" \
+    hchbaw/zce.zsh
 
 _anyframe-config () {
   zle -N _anyframe-gitmoji{,}
