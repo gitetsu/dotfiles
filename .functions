@@ -37,3 +37,7 @@ function b() {
       command brew $@
   esac
 }
+
+function appid() {
+  osascript -e "id of app \"$@\""
+}
