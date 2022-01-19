@@ -17,6 +17,14 @@ function b() {
       shift
       command brew install $@
       ;;
+    if)
+      shift
+      command brew info $@
+      ;;
+    l)
+      shift
+      command brew list $@
+      ;;
     r)
       shift
       command brew remove $@
