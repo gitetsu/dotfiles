@@ -12,9 +12,6 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
-zinit light-mode for \
-  denysdovhan/spaceship-prompt \
-
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
       zdharma/fast-syntax-highlighting \
@@ -83,8 +80,6 @@ source ~/.aliases
 source ~/.exports
 source ~/.functions
 
-eval "$(direnv hook zsh)"
-
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
 if [[ -f ~/.zshrc.local ]]; then
@@ -95,9 +90,10 @@ if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
-export SPACESHIP_PROMPT_ADD_NEWLINE=false
-export SPACESHIP_PROMPT_SEPARATE_LINE=false
-export SPACESHIP_CHAR_SYMBOL="⋱  "
-export SPACESHIP_EXIT_CODE_SHOW=true
-export SPACESHIP_EXIT_CODE_SYMBOL="✘ "
-export SPACESHIP_CHAR_PREFIX="$NEWLINE"
+if (( $+commands[direnv] )); then
+  eval "$(direnv hook zsh)"
+fi
+
+if (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
+fi
