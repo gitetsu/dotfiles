@@ -1,0 +1,17 @@
+{
+ :profiles  {:Goku {:default true :sim 50 :delay 500 :alone 500 :held 500}}
+ :templates {
+             :hyper "open -g hammerspoon://hyper?action=%s\\&target=%s"
+             }
+ :layers {
+          :command {:key :left_command}
+          }
+ :main [{:des "Caps Lock to Escape on single press, Left Control on press and hold."
+         :rules [[:##caps_lock :left_control nil {:alone :escape}]
+                 ]}
+        {:des "Left Command to Eisuu(if alone), Right Command to Kana(if alone)"
+         :rules [[:##left_command {:key :left_command :lazy true} nil {:alone :japanese_eisuu :held :left_command :params {:held 100}}]
+                 [:##right_command {:key :right_command :lazy true} nil {:alone :japanese_kana :held :right_command :params {:held 100}}]
+                 ]}
+        ]
+ }
