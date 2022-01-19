@@ -38,6 +38,6 @@ function b() {
   esac
 }
 
-function appid() {
+function bundleid() {
   osascript -e "id of app \"$@\""
 }
