@@ -3,5 +3,6 @@ export FZF_DEFAULT_OPTS='--height=40% --layout=reverse --bind=ctrl-j:accept,ctrl
 export PATH=$HOME/.local/bin:$PATH
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR=/usr/local/lib/password-store/extensions
+export GOKU_EDN_CONFIG_FILE=$HOME/.config/karabiner/karabiner.edn
 
 export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
