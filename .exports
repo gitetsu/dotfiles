@@ -1,8 +1,9 @@
+export XDG_CONFIG_HOME=$HOME/.config
 export DOT_BASE_DIR=`dirname $(readlink $0)` # for fzf-edit-dotfiles
 export FZF_DEFAULT_OPTS='--height=40% --layout=reverse --bind=ctrl-j:accept,ctrl-k:kill-line,alt-n:preview-page-down,alt-p:preview-page-up --cycle'
 export PATH=$HOME/.local/bin:$PATH
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR=/usr/local/lib/password-store/extensions
-export GOKU_EDN_CONFIG_FILE=$HOME/.config/karabiner/karabiner.edn
+export GOKU_EDN_CONFIG_FILE=$XDG_CONFIG_HOME/karabiner/karabiner.edn
 
-export STARSHIP_CONFIG=$HOME/.config/starship/config.toml
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/config.toml
