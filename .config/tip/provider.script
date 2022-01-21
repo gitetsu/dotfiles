@@ -1,0 +1,66 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'cgi'
+
+def main(input)
+  input = input.strip
+  items = []
+  items += to_github_url(input)
+  items += to_realtime_search_url(input)
+  items += to_nitter_rss_url(input)
+  items += to_twitter_url(input)
+  items += get_text_length(input)
+
+  puts items.compact.to_json
+end
+
+def to_github_url(input)
+  # https://github.com/shinnn/github-username-regex/issues/4
+  return [] unless /[a-z\d](?:[a-z\d]|-(?=[a-z\d])|(?<=[a-z\d])-){0,38}(?:\/?[-_\.a-z\d]*)*$/i.match(input)
+  [{
+     type: 'url',
+     label: 'Github user[/repo]',
+     value: "https://github.com/#{input}"
+  }]
+end
+
+def to_realtime_search_url(input)
+  return [] unless input
+  [{
+       type: 'url',
+       label: 'Yahoo realtime search',
+       value: "https://search.yahoo.co.jp/realtime/search?p=#{CGI.escape(input)}&ei=UTF-8"
+   }]
+end
+
+def to_nitter_rss_url(input)
+  m = /^@?(?'username'(\w){1,15})$/.match(input)
+  return [] unless m
+  [{
+     type: 'text',
+     label: 'Copy nitter rss url',
+     value: "https://nitter.actionsack.com/#{m[:username]}/rss"
+  }]
+end
+
+def to_twitter_url(input)
+  return [] unless /^@?(\w){1,15}$/.match(input)
+  [{
+     type: 'url',
+     label: 'Twitter user',
+     value: "https://twitter.com/#{input}"
+  }]
+end
+
+def get_text_length(input)
+  [{
+     type: 'text',
+     label: 'Text length: ' + input.length.to_s,
+     value: input.length.to_s
+  }]
+end
+
+if __FILE__ == $0
+  main(ARGV[0])
+end

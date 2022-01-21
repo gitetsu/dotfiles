@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+# vim: ft=zsh
+
+set -eu
+
+# tip
+local tip_path="${HOME}/Library/Application Scripts/tanin.tip/"
+mkdir -p "${tip_path}"
+# this should be a hard link
+# see https://github.com/tanin47/tip/blob/master/PROVIDER.md#tldr
+ln ${XDG_CONFIG_HOME}/tip/provider.script ${tip_path}
+
