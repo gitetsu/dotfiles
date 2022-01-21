@@ -1,0 +1,31 @@
+[style.description]
+underline = false
+bold = false
+italic = false
+
+[style.command_name]
+foreground = "green"
+underline = false
+bold = false
+italic = false
+
+[style.example_text]
+foreground = "yellow"
+underline = false
+bold = false
+italic = false
+
+[style.example_code]
+foreground = "red"
+underline = false
+bold = false
+italic = false
+
+[style.example_variable]
+foreground = "blue"
+underline = true
+bold = false
+italic = false
+
+[updates]
+auto_update = true
