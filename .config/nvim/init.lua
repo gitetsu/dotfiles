@@ -37,6 +37,19 @@ opt.wildmode = "longest:full"
 
 vim.g.mapleader = " "
 
+local function map(mode, key, cmd, opts, defaults)
+  opts = vim.tbl_deep_extend("force", { silent = true }, defaults or {}, opts or {})
+  vim.api.nvim_set_keymap(mode, key, cmd, opts)
+end
+
+local function icnoremap(key, cmd, opts)
+  return map("!", key, cmd, opts, { noremap = true })
+end
+
+icnoremap("<C-b>", "<Left>", { silent = false })
+icnoremap("<C-f>", "<Right>", { silent = false })
+icnoremap("<C-d>", "<Del>", { silent = false })
+
 require "plugins"
 -- cmd "hi Normal ctermbg=none"
 -- cmd "hi SignColumn ctermbg=none"
