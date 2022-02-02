@@ -33,7 +33,7 @@ opt.smartcase = true
 opt.splitright = true
 
 -- cmd
-opt.wildmode = "longest:full"
+opt.wildmode = "longest,full"
 
 vim.g.mapleader = " "
 

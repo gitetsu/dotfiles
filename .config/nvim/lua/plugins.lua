@@ -67,6 +67,11 @@ return require("packer").startup(function(use)
           l = { "<cmd>:set list!<cr>" },
           p = { "<cmd>:set paste!<cr>" },
         },
+        l = {
+          name = "Lsp",
+          a = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action"},
+          d = {"<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition"},
+        }
       }, { prefix = "<leader>" })
     end,
   }
@@ -75,7 +80,9 @@ return require("packer").startup(function(use)
     "kyazdani42/nvim-tree.lua",
     cmd = { "NvimTreeFindFile", "NvimTreeToggle", "NvimTreeClose" },
     config = function()
-      require("nvim-tree").setup {}
+      require("nvim-tree").setup {
+        auto_close = true,
+      }
     end,
   }
 
