@@ -37,8 +37,10 @@ zinit wait'0' light-mode lucid for \
     hchbaw/zce.zsh
 
 _anyframe-config () {
-  zle -N _anyframe-gitmoji{,}
+  zle -N _anyframe-gitmoji
   bindkey '^[ig' _anyframe-gitmoji
+  zle -N _anyframe-edit-yadm-files
+  bindkey '^[e.' _anyframe-edit-yadm-files
 }
 
 _anyframe-gitmoji () {
@@ -48,13 +50,19 @@ _anyframe-gitmoji () {
     | anyframe-action-insert
 }
 
+_anyframe-edit-yadm-files () {
+  yadm list -a \
+    | anyframe-selector-auto \
+    | awk -v home=$HOME '{printf "%s/%s", home, $1}' \
+    | anyframe-action-execute $EDITOR --
+}
+
 _fzf-widgets-config () {
   bindkey '^[ds'  fzf-select-docker-widget
   bindkey '^[dc' fzf-docker-remove-containers
   bindkey '^[di' fzf-docker-remove-images
   bindkey '^[dv' fzf-docker-remove-volumes
 
-  bindkey '^[e.' fzf-edit-dotfiles
   bindkey '^[ef' fzf-edit-files
 
   bindkey '^[gs' fzf-select-git-widget
