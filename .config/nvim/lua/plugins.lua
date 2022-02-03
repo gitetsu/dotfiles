@@ -250,7 +250,15 @@ return require("packer").startup(function(use)
 
   use { "mbbill/undotree", cmd = "UndotreeToggle" }
 
-  use { "ggandor/lightspeed.nvim", event = "BufReadPre" }
+  use {
+    "phaazon/hop.nvim",
+    event = "BufReadPre",
+    config = function()
+      require'hop'.setup {
+      }
+    end
+  }
+
   use {
     "andymass/vim-matchup",
     event = "CursorMoved",
