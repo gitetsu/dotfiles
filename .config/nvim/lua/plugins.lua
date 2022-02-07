@@ -37,8 +37,14 @@ return require("packer").startup(function(use)
       telescope.load_extension "fzf"
       telescope.setup {
         defaults = {
+          sorting_strategy = "ascending",
           layout_config = {
             prompt_position = "top",
+          },
+          mappings = {
+            i = {
+              ["<C-a>"] = {"<ESC>I", type = "command"},
+            },
           },
         },
       }
@@ -80,7 +86,10 @@ return require("packer").startup(function(use)
     "kyazdani42/nvim-tree.lua",
     cmd = { "NvimTreeFindFile", "NvimTreeToggle", "NvimTreeClose" },
     config = function()
+      vim.g.nvim_tree_quit_on_open = 1
+      vim.g.nvim_tree_group_empty = 1
       require("nvim-tree").setup {
+        hijack_cursor = true,
         auto_close = true,
       }
     end,
