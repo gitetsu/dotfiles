@@ -69,14 +69,22 @@ end
 -- normal
 nnoremap("j", "gj")
 nnoremap("k", "gk")
-map('gj', "<cmd>lua require'hop'.hint_char1({ current_line_only = false, multi_windows = true })<cr>", {})
-map('gk', "<cmd>lua require'hop'.hint_char2({ current_line_only = false, multi_windows = true })<cr>", {})
-map('gl', "<cmd>lua require'hop'.hint_lines({ current_line_only = false, multi_windows = true })<cr>", {})
-map('f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-map('F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+map("gj", "<cmd>lua require'hop'.hint_char1({ current_line_only = false, multi_windows = true })<cr>", {})
+map("gk", "<cmd>lua require'hop'.hint_char2({ current_line_only = false, multi_windows = true })<cr>", {})
+map("gl", "<cmd>lua require'hop'.hint_lines({ current_line_only = false, multi_windows = true })<cr>", {})
+map(
+  "f",
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+  {}
+)
+map(
+  "F",
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+  {}
+)
 -- https://github.com/phaazon/hop.nvim/issues/191
-omap('t', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })<cr>", {})
-omap('T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {})
+omap("t", "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })<cr>", {})
+omap("T", "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {})
 
 -- insert/command
 icnoremap("<C-b>", "<Left>", { silent = false })

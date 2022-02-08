@@ -43,7 +43,7 @@ return require("packer").startup(function(use)
           },
           mappings = {
             i = {
-              ["<C-a>"] = {"<ESC>I", type = "command"},
+              ["<C-a>"] = { "<ESC>I", type = "command" },
             },
           },
         },
@@ -75,9 +75,9 @@ return require("packer").startup(function(use)
         },
         l = {
           name = "Lsp",
-          a = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action"},
-          d = {"<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition"},
-        }
+          a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+          d = { "<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
+        },
       }, { prefix = "<leader>" })
     end,
   }
@@ -262,9 +262,8 @@ return require("packer").startup(function(use)
     "phaazon/hop.nvim",
     event = "BufReadPre",
     config = function()
-      require'hop'.setup {
-      }
-    end
+      require("hop").setup {}
+    end,
   }
 
   use {
