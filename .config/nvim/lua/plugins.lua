@@ -191,7 +191,6 @@ return require("packer").startup(function(use)
     end,
   }
 
-  use "9mm/vim-closer"
   use "kana/vim-smartchr"
 
   use {
