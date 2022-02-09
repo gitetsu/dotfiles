@@ -55,7 +55,7 @@ local function nnoremap(key, cmd, opts)
 end
 
 local function omap(key, cmd, opts)
-  return keymap("n", key, cmd, opts)
+  return keymap("o", key, cmd, opts)
 end
 
 local function icnoremap(key, cmd, opts)
