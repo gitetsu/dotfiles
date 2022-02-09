@@ -196,7 +196,7 @@ return require("packer").startup(function(use)
   use {
     "blackCauldron7/surround.nvim",
     config = function()
-      require("surround").setup { mappings_style = "surround" }
+      require("surround").setup { mappings_style = "sandwich" }
     end,
   }
 
@@ -264,6 +264,11 @@ return require("packer").startup(function(use)
     config = function()
       require("hop").setup {}
     end,
+  }
+
+  use {
+    "wellle/targets.vim",
+    event = "BufEnter",
   }
 
   use {

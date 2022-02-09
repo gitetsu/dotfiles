@@ -83,8 +83,16 @@ map(
   {}
 )
 -- https://github.com/phaazon/hop.nvim/issues/191
-omap("t", "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })<cr>", {})
-omap("T", "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {})
+omap(
+  "t",
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+  {}
+)
+omap(
+  "T",
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+  {}
+)
 
 -- insert/command
 icnoremap("<C-b>", "<Left>", { silent = false })
