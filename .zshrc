@@ -23,6 +23,7 @@ zinit wait lucid light-mode for \
 zinit wait'0' light-mode lucid for \
   mafredri/zsh-async \
   zdharma-continuum/history-search-multi-word \
+  jasonmccreary/git-trim \
   atload"_anyframe-config" \
     mollifier/anyframe \
   atload"bindkey '^x^e' emoji::cli" \
