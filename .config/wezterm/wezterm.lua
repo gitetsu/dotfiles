@@ -13,8 +13,12 @@ return {
   adjust_window_size_when_changing_font_size = false,
 
   color_scheme = "Ayu Mirage",
-  cursor_blink_rate = 800,
   window_background_opacity = 0.8,
+
+  default_cursor_style = "BlinkingBlock",
+  cursor_blink_rate = 700,
+
+  window_decorations = "RESIZE",
   tab_bar_at_bottom = true,
 
   exit_behavior = "Close",
