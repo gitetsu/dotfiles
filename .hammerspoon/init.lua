@@ -17,7 +17,9 @@ end
 hs.loadSpoon("ReloadConfiguration")
 spoon.ReloadConfiguration:start()
 
-require ("local")
+if hs.fs.displayName("local.lua") then
+  require "local"
+end
 
 hs.hotkey.bind(modifier(), "a", function() focusWithMouse("Activity Monitor") end)
 hs.hotkey.bind(modifier(), "b", function() focusWithMouse("Vivaldi") end)
