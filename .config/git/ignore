@@ -4,3 +4,4 @@ tags
 .agignore
 Session.vim
 .local*.vimrc
+.envrc

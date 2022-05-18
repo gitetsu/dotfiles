@@ -27,7 +27,6 @@
 [color]
 	ui = auto
 [core]
-	excludesfile = ~/.gitignore
 	editor = vim
 	quotepath = false
 	precomposeunicode = true
