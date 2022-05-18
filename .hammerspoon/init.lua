@@ -26,7 +26,7 @@ hs.hotkey.bind(modifier(), "b", function() focusWithMouse("Vivaldi") end)
 hs.hotkey.bind(modifier(), "d", function() focusWithMouse("Dictionary") end)
 hs.hotkey.bind(modifier(), "f", function() focusWithMouse("Finder") end)
 hs.hotkey.bind(modifier(), "g", function() focusWithMouse("Google Chrome") end)
-hs.hotkey.bind(modifier(), "i", function() focusWithMouse("iTerm") end)
+hs.hotkey.bind(modifier(), "i", function() focusWithMouse("WezTerm") end)
 hs.hotkey.bind(modifier(), "k", function() focusWithMouse("Kindle") end)
 hs.hotkey.bind(modifier(), "s", function() focusWithMouse("System Preferences") end)
 hs.hotkey.bind(modifier(), "v", function() focusWithMouse("MacVim") end)
@@ -56,7 +56,7 @@ local ctrlBasedHotkeys = {
   ctrlLeftBracket,
 }
 
-hs.window.filter.new{'Terminal', 'iTerm2', 'MacVim'}
+hs.window.filter.new{'Terminal', 'iTerm2', 'MacVim', 'WezTerm'}
   :subscribe(hs.window.filter.windowFocused, function()
     hs.fnutils.each(ctrlBasedHotkeys, function(hotkey)
       hotkey:disable()
