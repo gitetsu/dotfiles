@@ -46,22 +46,33 @@ local config = {
   initial_cols = 300,
   window_decorations = "RESIZE",
   tab_bar_at_bottom = true,
+  scroll_back_lines = 10000,
 
   exit_behavior = "Close",
 
   leader = { key = "t", mods = "CTRL" },
   keys = {
     { key = "t", mods = "LEADER|CTRL", action = wezterm.action { SendString = "t" } },
+
+    -- panes
     {
       key = "|",
       mods = "LEADER|SHIFT",
       action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
     },
-    { key = "-", mods = "LEADER", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
-    { key = "h", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Left" } },
-    { key = "j", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Down" } },
-    { key = "k", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Up" } },
-    { key = "l", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Right" } },
+    { key = "-", mods = "LEADER|CTRL", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
+    { key = "h", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Left" } },
+    { key = "j", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Down" } },
+    { key = "k", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Up" } },
+    { key = "l", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Right" } },
+
+    -- tabs
+    { key = "c", mods = "LEADER|CTRL", action = wezterm.action { SpawnTab="CurrentPaneDomain" } },
+    { key = "n", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative=-1 } },
+    { key = "p", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative=1 } },
+
+    -- copy
+    { key = "[", mods = "LEADER|CTRL", action = "ActivateCopyMode" },
   },
 }
 
