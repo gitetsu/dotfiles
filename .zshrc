@@ -49,6 +49,7 @@ _anyframe-gitmoji () {
     | anyframe-selector-auto \
     | awk '{print $3}' \
     | anyframe-action-insert
+  zle redisplay
 }
 
 _anyframe-edit-yadm-files () {
