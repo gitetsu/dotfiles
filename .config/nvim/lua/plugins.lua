@@ -34,6 +34,7 @@ return require("packer").startup(function(use)
     module = "telescope",
     config = function()
       local telescope = require "telescope"
+      local actions = require "telescope.actions"
       telescope.load_extension "fzf"
       telescope.setup {
         defaults = {
@@ -44,6 +45,7 @@ return require("packer").startup(function(use)
           mappings = {
             i = {
               ["<C-a>"] = { "<ESC>I", type = "command" },
+              ["<C-g>"] = actions.close,
             },
           },
         },
@@ -222,14 +224,37 @@ return require("packer").startup(function(use)
           require("nvim-autopairs").setup()
         end,
       },
+      "onsails/lspkind.nvim",
     },
     event = "InsertEnter",
     config = function()
       local cmp = require "cmp"
+      local lspkind = require "lspkind"
       cmp.setup {
         sources = {
           { name = "nvim_lsp" },
         },
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = 'symbol_text',
+          })
+        },
+        mapping = {
+          ['<C-n>'] = function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            else
+              fallback()
+            end
+          end,
+          ['<C-p>'] = function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            else
+              fallback()
+            end
+          end
+        }
       }
       local cmp_autopairs = require "nvim-autopairs.completion.cmp"
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
