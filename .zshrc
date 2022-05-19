@@ -89,6 +89,9 @@ source ~/.aliases
 source ~/.exports
 source ~/.functions
 
+setopt inc_append_history
+setopt share_history
+
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
 if [[ -f ~/.zshrc.local ]]; then
