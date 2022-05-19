@@ -1,6 +1,26 @@
 local wezterm = require "wezterm"
 
-return {
+local local_config = function()
+  local ok, _ = pcall(require, "local")
+  if not ok then
+    return {}
+  end
+  wezterm.add_to_config_reload_watch_list(wezterm.config_dir .. "/local.lua")
+  return require("local").setup()
+end
+
+local function merge_tables(t1, t2)
+  for k, v in pairs(t2) do
+    if (type(v) == "table") and (type(t1[k] or false) == "table") then
+      merge_tables(t1[k], t2[k])
+    else
+      t1[k] = v
+    end
+  end
+  return t1
+end
+
+local config = {
   font = wezterm.font_with_fallback {
     {
       family = "Hermit",
@@ -38,9 +58,11 @@ return {
       action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
     },
     { key = "-", mods = "LEADER", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
-    { key = "h", mods = "LEADER", action = wezterm.action { ActivatePaneDirection="Left" } },
-    { key = "j", mods = "LEADER", action = wezterm.action { ActivatePaneDirection="Down" } },
-    { key = "k", mods = "LEADER", action = wezterm.action { ActivatePaneDirection="Up" } },
-    { key = "l", mods = "LEADER", action = wezterm.action { ActivatePaneDirection="Right" } },
+    { key = "h", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Left" } },
+    { key = "j", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Down" } },
+    { key = "k", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Up" } },
+    { key = "l", mods = "LEADER", action = wezterm.action { ActivatePaneDirection = "Right" } },
   },
 }
+
+return merge_tables(config, local_config())
