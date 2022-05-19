@@ -46,6 +46,9 @@ local config = {
   initial_cols = 300,
   window_decorations = "RESIZE",
   tab_bar_at_bottom = true,
+  window_padding = {
+    bottom = 0
+  },
   scroll_back_lines = 10000,
 
   exit_behavior = "Close",
