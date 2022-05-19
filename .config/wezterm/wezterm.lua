@@ -71,8 +71,8 @@ local config = {
 
     -- tabs
     { key = "c", mods = "LEADER|CTRL", action = wezterm.action { SpawnTab="CurrentPaneDomain" } },
-    { key = "n", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative=-1 } },
-    { key = "p", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative=1 } },
+    { key = "n", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative=1 } },
+    { key = "p", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative=-1 } },
 
     -- copy
     { key = "[", mods = "LEADER|CTRL", action = "ActivateCopyMode" },
