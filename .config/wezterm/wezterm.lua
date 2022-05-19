@@ -52,7 +52,7 @@ local config = {
 
   leader = { key = "t", mods = "CTRL" },
   keys = {
-    { key = "t", mods = "LEADER|CTRL", action = wezterm.action { SendString = "t" } },
+    { key = "t", mods = "LEADER|CTRL", action = wezterm.action {SendKey={key="t", mods="CTRL"}} },
 
     -- panes
     {
