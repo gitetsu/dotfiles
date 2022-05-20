@@ -1,0 +1,22 @@
+name: ci
+on:
+  push:
+    branchs:
+      - main
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: JohnnyMorganz/stylua-action@1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --file .config/lua/stylua.toml .
+      - name: Check if there are any changes
+        runs: git diff --exit-code
+      - name: Create pull request if changed
+        if: failure()
+        uses: peter-evans/create-pull-request@v4.0.3
+        with:
+          commit-message: ':rotating_light: fix: format'
