@@ -49,7 +49,7 @@ local config = {
   window_padding = {
     bottom = 0
   },
-  scroll_back_lines = 10000,
+  scrollback_lines = 10000,
 
   exit_behavior = "Close",
 
