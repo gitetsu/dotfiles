@@ -21,6 +21,7 @@ local function merge_tables(t1, t2)
 end
 
 local config = {
+  harfbuzz_features = {"calt=0", "clig=0", "liga=0"},
   font = wezterm.font_with_fallback {
     {
       family = "Hermit",
