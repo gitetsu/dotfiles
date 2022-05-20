@@ -46,16 +46,14 @@ local config = {
   initial_cols = 300,
   window_decorations = "RESIZE",
   tab_bar_at_bottom = true,
-  window_padding = {
-    bottom = 0
-  },
+  window_padding = { bottom = 0 },
   scrollback_lines = 10000,
 
   exit_behavior = "Close",
 
   leader = { key = "t", mods = "CTRL" },
   keys = {
-    { key = "t", mods = "LEADER|CTRL", action = wezterm.action {SendKey={key="t", mods="CTRL"}} },
+    { key = "t", mods = "LEADER|CTRL", action = wezterm.action { SendKey = { key = "t", mods = "CTRL" } } },
 
     -- panes
     {
@@ -70,9 +68,9 @@ local config = {
     { key = "l", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Right" } },
 
     -- tabs
-    { key = "c", mods = "LEADER|CTRL", action = wezterm.action { SpawnTab="CurrentPaneDomain" } },
-    { key = "n", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative=1 } },
-    { key = "p", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative=-1 } },
+    { key = "c", mods = "LEADER|CTRL", action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
+    { key = "n", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative = 1 } },
+    { key = "p", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative = -1 } },
 
     -- copy
     { key = "[", mods = "LEADER|CTRL", action = "ActivateCopyMode" },
