@@ -20,10 +20,11 @@ jobs:
       - name: Execute stylua
         run: /tmp/stylua --config-path .config/lua/stylua.toml -g '.*/' -g '*.lua' -v .
       - name: Check if there are any changes
+        id: check
         continue-on-error: true
         run: git diff --exit-code
       - name: Create pull request if changed
-        if: failure()
+        if: ${{ steps.check.outcome == 'failure' }}
         uses: peter-evans/create-pull-request@v4.0.3
         with:
           commit-message: ':rotating_light: fix: format'
