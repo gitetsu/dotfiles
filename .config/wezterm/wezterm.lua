@@ -20,6 +20,9 @@ local function merge_tables(t1, t2)
   return t1
 end
 
+local bright_lights = wezterm.get_builtin_color_schemes()["Bright Lights"]
+bright_lights.cursor_bg = "#ffc251"
+
 local config = {
   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   font = wezterm.font_with_fallback {
@@ -34,7 +37,14 @@ local config = {
   font_size = 9.0,
   adjust_window_size_when_changing_font_size = false,
 
-  color_scheme = "Ayu Mirage",
+  color_scheme = "Bright Lights Modified",
+  color_schemes = {
+    ["Adventure"] = {},
+    ["Bright Lights Modified"] = bright_lights,
+    ["lovelace"] = {},
+    ["MaterialOcean"] = {},
+    ["Tomorrow Night"] = {},
+  },
   window_background_opacity = 0.8,
 
   default_cursor_style = "BlinkingBlock",
