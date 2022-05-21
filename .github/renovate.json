@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "commitMessagePrefix": ":arrow_up: ",
+  "regexManagers": [
+    {
+      "fileMatch": ["^\.github\/workflows\/ci\.yml$"],
+      "matchStrings": ["  STYLUA_VERSION: (?<currentValue>.*?)\n"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "JohnnyMorganz/StyLua",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ]
+}
