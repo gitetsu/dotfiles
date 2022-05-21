@@ -24,12 +24,10 @@ local config = {
   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   font = wezterm.font_with_fallback {
     {
-      family = "Hermit",
+      family = "Menlo",
     },
     {
-      family = "ShureTechMono Nerd Font Mono",
-      -- https://github.com/wez/wezterm/issues/1736#issuecomment-1073046902
-      harfbuzz_features = { "liga=0" },
+      family = "Osaka",
     },
     "Apple Color Emoji",
   },
