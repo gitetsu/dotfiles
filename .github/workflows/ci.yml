@@ -13,9 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Prepare stylua
-        run: curl -LO https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-linux.zip
+        run: |
+          curl -Lo /tmp/stylua-linux.zip https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-linux.zip
+          unzip /tmp/stylua-linux.zip -d /tmp
+          chmod +x /tmp/stylua
       - name: Execute stylua
-        run: ./stylua --config-path .config/lua/stylua.toml -g '.*/' -g '*.lua' -v .
+        run: /tmp/stylua --config-path .config/lua/stylua.toml -g '.*/' -g '*.lua' -v .
       - name: Check if there are any changes
         continue-on-error: true
         run: git diff --exit-code
