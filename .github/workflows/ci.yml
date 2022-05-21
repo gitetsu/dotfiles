@@ -27,5 +27,5 @@ jobs:
         if: ${{ steps.check.outcome == 'failure' }}
         uses: peter-evans/create-pull-request@v4.0.3
         with:
-          title: ':rotating_light: fix: format'
-          commit-message: ':rotating_light: fix: format'
+          title: ':art: fix: format'
+          commit-message: ':art: fix: format'
