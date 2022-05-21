@@ -1,6 +1,6 @@
 -- local.luaからも参照するのでグローバル
 function modifier()
-  return {"shift", "ctrl"}
+  return { "shift", "ctrl" }
 end
 
 function focusWithMouse(app)
@@ -9,27 +9,45 @@ function focusWithMouse(app)
     local afterScreen = hs.window.focusedWindow():screen()
     if #hs.screen.allScreens() > 1 and beforeScreen ~= afterScreen then
       local geo = afterScreen:frame()
-      hs.mouse.setRelativePosition({x=geo.w / 2, y=geo.h / 2}, afterScreen)
+      hs.mouse.setRelativePosition({ x = geo.w / 2, y = geo.h / 2 }, afterScreen)
     end
   end
 end
 
-hs.loadSpoon("ReloadConfiguration")
+hs.loadSpoon "ReloadConfiguration"
 spoon.ReloadConfiguration:start()
 
-if hs.fs.displayName("local.lua") then
+if hs.fs.displayName "local.lua" then
   require "local"
 end
 
-hs.hotkey.bind(modifier(), "a", function() focusWithMouse("Activity Monitor") end)
-hs.hotkey.bind(modifier(), "b", function() focusWithMouse("Vivaldi") end)
-hs.hotkey.bind(modifier(), "d", function() focusWithMouse("Dictionary") end)
-hs.hotkey.bind(modifier(), "f", function() focusWithMouse("Finder") end)
-hs.hotkey.bind(modifier(), "g", function() focusWithMouse("Google Chrome") end)
-hs.hotkey.bind(modifier(), "i", function() focusWithMouse("WezTerm") end)
-hs.hotkey.bind(modifier(), "k", function() focusWithMouse("Kindle") end)
-hs.hotkey.bind(modifier(), "s", function() focusWithMouse("System Preferences") end)
-hs.hotkey.bind(modifier(), "v", function() focusWithMouse("MacVim") end)
+hs.hotkey.bind(modifier(), "a", function()
+  focusWithMouse "Activity Monitor"
+end)
+hs.hotkey.bind(modifier(), "b", function()
+  focusWithMouse "Vivaldi"
+end)
+hs.hotkey.bind(modifier(), "d", function()
+  focusWithMouse "Dictionary"
+end)
+hs.hotkey.bind(modifier(), "f", function()
+  focusWithMouse "Finder"
+end)
+hs.hotkey.bind(modifier(), "g", function()
+  focusWithMouse "Google Chrome"
+end)
+hs.hotkey.bind(modifier(), "i", function()
+  focusWithMouse "WezTerm"
+end)
+hs.hotkey.bind(modifier(), "k", function()
+  focusWithMouse "Kindle"
+end)
+hs.hotkey.bind(modifier(), "s", function()
+  focusWithMouse "System Preferences"
+end)
+hs.hotkey.bind(modifier(), "v", function()
+  focusWithMouse "MacVim"
+end)
 
 local function keyCode(key, modifiers)
   modifiers = modifiers or {}
@@ -44,10 +62,10 @@ local function remapKey(modifiers, key, keyCode)
   return hs.hotkey.bind(modifiers, key, keyCode, nil, keyCode)
 end
 
-local ctrlD = remapKey({'ctrl'}, 'd', keyCode('forwarddelete'))
-local ctrlJ = remapKey({'ctrl'}, 'j', keyCode('return'))
-local ctrlH = remapKey({'ctrl'}, 'h', keyCode('delete'))
-local ctrlLeftBracket = remapKey({'ctrl'}, '[', keyCode('escape'))
+local ctrlD = remapKey({ "ctrl" }, "d", keyCode "forwarddelete")
+local ctrlJ = remapKey({ "ctrl" }, "j", keyCode "return")
+local ctrlH = remapKey({ "ctrl" }, "h", keyCode "delete")
+local ctrlLeftBracket = remapKey({ "ctrl" }, "[", keyCode "escape")
 
 local ctrlBasedHotkeys = {
   ctrlD,
@@ -56,7 +74,7 @@ local ctrlBasedHotkeys = {
   ctrlLeftBracket,
 }
 
-hs.window.filter.new{'Terminal', 'iTerm2', 'MacVim', 'WezTerm'}
+hs.window.filter.new({ "Terminal", "iTerm2", "MacVim", "WezTerm" })
   :subscribe(hs.window.filter.windowFocused, function()
     hs.fnutils.each(ctrlBasedHotkeys, function(hotkey)
       hotkey:disable()

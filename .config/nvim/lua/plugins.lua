@@ -235,26 +235,26 @@ return require("packer").startup(function(use)
           { name = "nvim_lsp" },
         },
         formatting = {
-          format = lspkind.cmp_format({
-            mode = 'symbol_text',
-          })
+          format = lspkind.cmp_format {
+            mode = "symbol_text",
+          },
         },
         mapping = {
-          ['<C-n>'] = function(fallback)
+          ["<C-n>"] = function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             else
               fallback()
             end
           end,
-          ['<C-p>'] = function(fallback)
+          ["<C-p>"] = function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             else
               fallback()
             end
-          end
-        }
+          end,
+        },
       }
       local cmp_autopairs = require "nvim-autopairs.completion.cmp"
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
