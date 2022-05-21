@@ -4,15 +4,18 @@ on:
     branchs:
       - main
 
+env:
+  STYLUA_VERSION: 0.13.0
+
 jobs:
   format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: JohnnyMorganz/stylua-action@1.0.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          args: --config-path .config/lua/stylua.toml -g '**/*.lua' -g '.*/' -v .
+      - name: Prepare stylua
+        run: curl -LO https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-linux.zip
+      - name: Execute stylua
+        run: ./stylua --config-path .config/lua/stylua.toml -g '.*/' -g '*.lua' -v .
       - name: Check if there are any changes
         continue-on-error: true
         run: git diff --exit-code
