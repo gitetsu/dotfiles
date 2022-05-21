@@ -30,6 +30,7 @@
 	editor = vim
 	quotepath = false
 	precomposeunicode = true
+	pager = delta
 [push]
 	default = current
 [ghq]
@@ -40,3 +41,13 @@
 	autostash = true
 [fetch]
 	prune = true
+[interactive]
+	diffFilter = delta --color-only --syntax-theme ansi
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = true
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
