@@ -12,8 +12,9 @@ jobs:
       - uses: JohnnyMorganz/stylua-action@1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          args: --config-path .config/lua/stylua.toml -g '.*/' -g '*.lua' .
+          args: --config-path .config/lua/stylua.toml -g '.*/' -g '*.lua' -v .
       - name: Check if there are any changes
+        continue-on-error: true
         run: git diff --exit-code
       - name: Create pull request if changed
         if: failure()
