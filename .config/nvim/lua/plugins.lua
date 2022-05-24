@@ -365,7 +365,14 @@ return require("packer").startup(function(use)
 
   use {
     "akinsho/nvim-toggleterm.lua",
-    keys = { "<C-y>", "<leader>fl", "<leader>gt" },
+    keys = { "<C-Space>" },
+    config = function()
+      require("toggleterm").setup {
+        open_mapping = [[<c-space>]],
+        direction = 'vertical',
+        size = 100,
+      }
+    end,
   }
 
   use {
