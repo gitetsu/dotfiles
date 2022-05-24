@@ -369,7 +369,7 @@ return require("packer").startup(function(use)
     config = function()
       require("toggleterm").setup {
         open_mapping = [[<c-space>]],
-        direction = 'vertical',
+        direction = "vertical",
         size = 100,
       }
     end,
