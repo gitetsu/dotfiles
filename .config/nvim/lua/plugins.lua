@@ -94,8 +94,8 @@ return require("packer").startup(function(use)
         actions = {
           open_file = {
             quit_on_open = true,
-          }
-        }
+          },
+        },
       }
     end,
   }
@@ -130,13 +130,13 @@ return require("packer").startup(function(use)
         sections = {
           lualine_b = {
             {
-              'filename',
+              "filename",
               path = 1,
-            }
+            },
           },
           lualine_c = {},
-          lualine_x = {'branch', 'diff', 'diagnostics', 'encoding', 'fileformat', 'filetype'},
-        }
+          lualine_x = { "branch", "diff", "diagnostics", "encoding", "fileformat", "filetype" },
+        },
       }
     end,
   }
@@ -205,13 +205,13 @@ return require("packer").startup(function(use)
     end,
   }
 
-use {
-  'm-demare/hlargs.nvim',
-  requires = { 'nvim-treesitter/nvim-treesitter' },
-  config = function()
-    require("hlargs").setup {}
-  end,
-}
+  use {
+    "m-demare/hlargs.nvim",
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("hlargs").setup {}
+    end,
+  }
 
   use {
     "numToStr/Comment.nvim",
@@ -364,11 +364,11 @@ use {
     config = function()
       require("scrollbar").setup()
       require("scrollbar.handlers.search").setup()
-    end
+    end,
   }
 
   use {
-    "kevinhwang91/nvim-hlslens"
+    "kevinhwang91/nvim-hlslens",
   }
 
   use {
