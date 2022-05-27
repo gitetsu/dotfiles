@@ -224,7 +224,7 @@ use {
   use "kana/vim-smartchr"
 
   use {
-    "blackCauldron7/surround.nvim",
+    "ur4ltz/surround.nvim",
     config = function()
       require("surround").setup { mappings_style = "sandwich" }
     end,
