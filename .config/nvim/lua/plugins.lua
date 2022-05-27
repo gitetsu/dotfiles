@@ -127,6 +127,16 @@ return require("packer").startup(function(use)
         options = {
           icons_enabled = true,
         },
+        sections = {
+          lualine_b = {
+            {
+              'filename',
+              path = 1,
+            }
+          },
+          lualine_c = {},
+          lualine_x = {'branch', 'diff', 'diagnostics', 'encoding', 'fileformat', 'filetype'},
+        }
       }
     end,
   }
@@ -194,6 +204,14 @@ return require("packer").startup(function(use)
       }
     end,
   }
+
+use {
+  'm-demare/hlargs.nvim',
+  requires = { 'nvim-treesitter/nvim-treesitter' },
+  config = function()
+    require("hlargs").setup {}
+  end,
+}
 
   use {
     "numToStr/Comment.nvim",
@@ -339,6 +357,18 @@ return require("packer").startup(function(use)
   use {
     "norcalli/nvim-colorizer.lua",
     event = "BufReadPre",
+  }
+
+  use {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require("scrollbar").setup()
+      require("scrollbar.handlers.search").setup()
+    end
+  }
+
+  use {
+    "kevinhwang91/nvim-hlslens"
   }
 
   use {
