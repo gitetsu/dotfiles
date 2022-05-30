@@ -10,3 +10,4 @@ mkdir -p "${tip_path}"
 # see https://github.com/tanin47/tip/blob/master/PROVIDER.md#tldr
 ln ${XDG_CONFIG_HOME}/tip/provider.script ${tip_path}
 
+defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME}/hammerspoon/init.lua"
