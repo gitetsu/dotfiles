@@ -1,6 +1,12 @@
 {
  :profiles  {:Goku {:default true :sim 50 :delay 500 :alone 500 :held 500}}
- :applications {:btt ["^com\\.hegenberg\\.BetterTouchTool$"]}
+ :applications {
+                :disable-emacs-mode-apps [
+                                          "^com\\.github\\.wez\\.wezterm$"
+                                          "^com\\.googlecode\\.iterm2$"
+                                          "^com\\.apple\\.Terminal$"
+                                          ]
+                }
  :templates {
              :hyper "open -g hammerspoon://hyper?action=%s\\&target=%s"
              }
@@ -10,13 +16,23 @@
  :main [{:des "Caps Lock to Escape on single press, Left Control on press and hold."
          :rules [[:##caps_lock :left_control nil {:alone :escape}]
                  ]}
+        {:des "Emacs keybindings"
+         :rules [:emacs-mode
+                 [:condi :!disable-emacs-mode-apps]
+                 [:!Ti :tab]
+                 [:!Tm :return_or_enter]
+                 [:!Th :delete_or_backspace]
+                 [:!Td :delete_forward]
+                 [:!Tb :left_arrow]
+                 [:!Tf :right_arrow]
+                 [:!Ta :home]
+                 [:!Te :end]
+                 [:!Tp :up_arrow]
+                 [:!Tn :down_arrow]
+                 ]}
         {:des "Left Command to Eisuu(if alone), Right Command to Kana(if alone)"
          :rules [[:##left_command {:key :left_command :lazy true} nil {:alone :japanese_eisuu :held :left_command :params {:held 100}}]
                  [:##right_command {:key :right_command :lazy true} nil {:alone :japanese_kana :held :right_command :params {:held 100}}]
-                 ]}
-        {:des "Move selection by C-n/C-p in BTT Clipboard Manager"
-         :rules [[:!Tn :down_arrow :btt]
-                 [:!Tp :up_arrow :btt]
                  ]}
         ]
  }
