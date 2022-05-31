@@ -378,9 +378,6 @@ return require("packer").startup(function(use)
       "nvim-treesitter/nvim-treesitter",
       "nvim-telescope/telescope.nvim",
     },
-    config = function()
-      require("yaml_nvim").init()
-    end,
   }
 
   use {
