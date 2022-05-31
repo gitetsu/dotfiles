@@ -5,6 +5,7 @@
                                           "^com\\.github\\.wez\\.wezterm$"
                                           "^com\\.googlecode\\.iterm2$"
                                           "^com\\.apple\\.Terminal$"
+                                          "^org\\.vim\\.MacVim$"
                                           ]
                 }
  :templates {
