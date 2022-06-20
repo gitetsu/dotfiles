@@ -1,11 +1,13 @@
 {
  :profiles  {:Goku {:default true :sim 50 :delay 500 :alone 500 :held 500}}
  :applications {
-                :disable-emacs-mode-apps [
+                :disable-emacs-mode-apps [:identifiers
                                           "^com\\.github\\.wez\\.wezterm$"
                                           "^com\\.googlecode\\.iterm2$"
                                           "^com\\.apple\\.Terminal$"
                                           "^org\\.vim\\.MacVim$"
+                                          :paths
+                                          "^\\/usr\\/local\\/bin\\/wezterm-gui$"
                                           ]
                 }
  :templates {
