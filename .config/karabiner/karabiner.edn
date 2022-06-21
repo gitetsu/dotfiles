@@ -16,6 +16,9 @@
  :layers {
           :command {:key :left_command}
           }
+ :simlayers {
+             :mouse_keys_mode_v4 {:key :d :afterup {:set ["mouse_keys_mode_v4_scroll" 0]}}
+             }
  :main [{:des "Caps Lock to Escape on single press, Left Control on press and hold."
          :rules [[:##caps_lock :left_control nil {:alone :escape}]
                  ]}
@@ -33,6 +36,22 @@
                  [:!Tp :up_arrow]
                  [:!Tn :down_arrow]
                  ]}
+        {:des   "Mouse Keys Mode v4 (rev 1)"
+         :rules [[:##j {:mkey {:vwheel 32}} [["mouse_keys_mode_v4" 1] ["mouse_keys_mode_v4_scroll" 1]]]
+                 [:##j {:mkey {:y 1536}} [:mouse_keys_mode_v4]]
+                 [:##k {:mkey {:vwheel -32}} [["mouse_keys_mode_v4" 1] ["mouse_keys_mode_v4_scroll" 1]]]
+                 [:##k {:mkey {:y -1536}} [:mouse_keys_mode_v4]]
+                 [:##h {:mkey {:hwheel 32}} [["mouse_keys_mode_v4" 1] ["mouse_keys_mode_v4_scroll" 1]]]
+                 [:##h {:mkey {:x -1536}} [:mouse_keys_mode_v4]]
+                 [:##l {:mkey {:hwheel -32}} [["mouse_keys_mode_v4" 1] ["mouse_keys_mode_v4_scroll" 1]]]
+                 [:##l {:mkey {:x 1536}} [:mouse_keys_mode_v4]]
+                 :mouse_keys_mode_v4
+                 [:##v {:pkey :button1}]
+                 [:##b {:pkey :button3}]
+                 [:##n {:pkey :button2}]
+                 [:##s ["mouse_keys_mode_v4_scroll" 1] nil {:afterup ["mouse_keys_mode_v4_scroll" 0]}]
+                 [:##f {:mkey {:speed 2.0}}]
+                 [:##g {:mkey {:speed 0.5}}]]}
         {:des "Left Command to Eisuu(if alone), Right Command to Kana(if alone)"
          :rules [[:##left_command {:key :left_command :lazy true} nil {:alone :japanese_eisuu :held :left_command :params {:held 100}}]
                  [:##right_command {:key :right_command :lazy true} nil {:alone :japanese_kana :held :right_command :params {:held 100}}]
