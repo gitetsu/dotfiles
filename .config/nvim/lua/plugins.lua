@@ -66,7 +66,9 @@ return require("packer").startup(function(use)
       wk.register({
         f = {
           name = "Files",
-          f = { "<cmd>Telescope find_files<cr>", "Find File" },
+          b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
+          f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+          F = { "<cmd>Telescope find_files no_ignore=true<cr>", "Find All Files" },
           t = { "<cmd>NvimTreeFindFile<cr>", "Find In Tree" },
           T = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
         },
@@ -88,7 +90,6 @@ return require("packer").startup(function(use)
     "kyazdani42/nvim-tree.lua",
     cmd = { "NvimTreeFindFile", "NvimTreeToggle", "NvimTreeClose" },
     config = function()
-      vim.g.nvim_tree_group_empty = 1
       require("nvim-tree").setup {
         hijack_cursor = true,
         actions = {
@@ -96,6 +97,12 @@ return require("packer").startup(function(use)
             quit_on_open = true,
           },
         },
+        git = {
+          ignore = false,
+        },
+        renderer = {
+          group_empty = true,
+        }
       }
     end,
   }
