@@ -254,6 +254,13 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "johmsalas/text-case.nvim",
+    config = function()
+      require("textcase").setup {}
+    end
+  }
+
+  use {
     "mhartington/formatter.nvim",
     event = "BufWritePre",
   }
