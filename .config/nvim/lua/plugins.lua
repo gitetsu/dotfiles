@@ -102,7 +102,7 @@ return require("packer").startup(function(use)
         },
         renderer = {
           group_empty = true,
-        }
+        },
       }
     end,
   }
