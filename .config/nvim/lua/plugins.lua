@@ -303,6 +303,16 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "Maan2003/lsp_lines.nvim",
+    config = function()
+      vim.diagnostic.config({
+        virtual_text = false,
+      })
+      require("lsp_lines").register_lsp_virtual_lines()
+    end,
+  }
+
+  use {
     "folke/todo-comments.nvim",
     cmd = { "TodoTrouble", "TodoTelescope" },
     event = "BufReadPost",
