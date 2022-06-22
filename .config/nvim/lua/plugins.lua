@@ -224,7 +224,7 @@ return require("packer").startup(function(use)
     "lewis6991/gitsigns.nvim",
     config = function()
       require("gitsigns").setup {}
-    end
+    end,
   }
 
   use {
@@ -257,7 +257,7 @@ return require("packer").startup(function(use)
     "johmsalas/text-case.nvim",
     config = function()
       require("textcase").setup {}
-    end
+    end,
   }
 
   use {
@@ -328,9 +328,9 @@ return require("packer").startup(function(use)
   use {
     "Maan2003/lsp_lines.nvim",
     config = function()
-      vim.diagnostic.config({
+      vim.diagnostic.config {
         virtual_text = false,
-      })
+      }
       require("lsp_lines").register_lsp_virtual_lines()
     end,
   }
