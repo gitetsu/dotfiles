@@ -11,3 +11,5 @@ mkdir -p "${tip_path}"
 ln ${XDG_CONFIG_HOME}/tip/provider.script ${tip_path}
 
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME}/hammerspoon/init.lua"
+
+defaults write org.gpgtools.pinentry-mac UseKeychain -bool NO
