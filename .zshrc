@@ -110,3 +110,7 @@ fi
 if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
+
+if (( $+commands[asdf] )); then
+  . /usr/local/opt/asdf/libexec/asdf.sh
+fi
