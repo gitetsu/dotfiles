@@ -24,6 +24,8 @@ local bright_lights = wezterm.get_builtin_color_schemes()["Bright Lights"]
 bright_lights.cursor_bg = "#ffc251"
 
 local config = {
+  audible_bell = "Disabled",
+
   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   font = wezterm.font_with_fallback {
     {
