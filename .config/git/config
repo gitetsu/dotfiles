@@ -33,6 +33,7 @@
 	pager = delta
 [push]
 	default = current
+	autoSetupRemote = true
 [ghq]
 	root = ~/repos
 [user]
