@@ -80,11 +80,15 @@ local config = {
 
     -- tabs
     { key = "c", mods = "LEADER|CTRL", action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
-    { key = "d", mods = "LEADER|CTRL", action = wezterm.action_callback(function (window, pane)
-      local overrides = window:get_config_overrides() or {}
-      overrides.enable_tab_bar = not overrides.enable_tab_bar
-      window:set_config_overrides(overrides)
-    end)},
+    {
+      key = "d",
+      mods = "LEADER|CTRL",
+      action = wezterm.action_callback(function(window, pane)
+        local overrides = window:get_config_overrides() or {}
+        overrides.enable_tab_bar = not overrides.enable_tab_bar
+        window:set_config_overrides(overrides)
+      end),
+    },
     { key = "n", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative = 1 } },
     { key = "p", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative = -1 } },
 
