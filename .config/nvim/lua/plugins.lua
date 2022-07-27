@@ -360,6 +360,14 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "gbprod/stay-in-place.nvim",
+    event = "VimEnter",
+    config = function()
+      require("stay-in-place").setup {}
+    end,
+  }
+
+  use {
     "wellle/targets.vim",
     event = "BufEnter",
   }
