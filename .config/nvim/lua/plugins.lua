@@ -80,7 +80,7 @@ return require("packer").startup(function(use)
         l = {
           name = "Lsp",
           a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-          d = { "<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition" },
+          d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Go To Definition" },
         },
       }, { prefix = "<leader>" })
     end,
@@ -171,6 +171,15 @@ return require("packer").startup(function(use)
     },
     config = function()
       require("lspconfig").phpactor.setup {}
+    end,
+  }
+
+  use {
+    "rmagatti/goto-preview",
+    config = function()
+      require('goto-preview').setup {
+        opacity = 10,
+      }
     end,
   }
 
