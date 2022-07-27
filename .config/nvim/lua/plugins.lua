@@ -177,7 +177,7 @@ return require("packer").startup(function(use)
   use {
     "rmagatti/goto-preview",
     config = function()
-      require('goto-preview').setup {
+      require("goto-preview").setup {
         opacity = 10,
       }
     end,
