@@ -66,9 +66,9 @@ return require("packer").startup(function(use)
       wk.register({
         f = {
           name = "Files",
-          b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
-          f = { "<cmd>Telescope find_files<cr>", "Find Files" },
-          F = { "<cmd>Telescope find_files no_ignore=true<cr>", "Find All Files" },
+          b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Find Buffers" },
+          f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find Files" },
+          F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<cr>", "Find All Files" },
           t = { "<cmd>NvimTreeFindFile<cr>", "Find In Tree" },
           T = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
         },
