@@ -391,6 +391,14 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "AckslD/nvim-trevJ.lua",
+    module = "trevj",
+    config = function()
+      require("trevj").setup()
+    end,
+  }
+
+  use {
     "andymass/vim-matchup",
     event = "CursorMoved",
     config = function()
