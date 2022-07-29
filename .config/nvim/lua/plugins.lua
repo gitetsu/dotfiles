@@ -362,7 +362,8 @@ return require("packer").startup(function(use)
 
   use {
     "phaazon/hop.nvim",
-    event = "BufReadPre",
+    branch = "v2",
+    event = "VimEnter",
     config = function()
       require("hop").setup {}
     end,
