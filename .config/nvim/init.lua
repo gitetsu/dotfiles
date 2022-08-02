@@ -74,36 +74,36 @@ map("gk", "<cmd>lua require'hop'.hint_char2({ current_line_only = false, multi_w
 map("gl", "<cmd>lua require'hop'.hint_lines({ current_line_only = false, multi_windows = true })<cr>", {})
 map(
   "f",
-  "<cmd>lua require'hop'.hint_char1({"..
-    "direction = require'hop.hint'.HintDirection.AFTER_CURSOR,"..
-    "current_line_only = true"..
-  "})<cr>",
+  "<cmd>lua require'hop'.hint_char1({"
+    .. "direction = require'hop.hint'.HintDirection.AFTER_CURSOR,"
+    .. "current_line_only = true"
+    .. "})<cr>",
   {}
 )
 map(
   "F",
-  "<cmd>lua require'hop'.hint_char1({" .. 
-    "direction = require'hop.hint'.HintDirection.BEFORE_CURSOR," ..
-    "current_line_only = true," ..
-  "})<cr>",
+  "<cmd>lua require'hop'.hint_char1({"
+    .. "direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,"
+    .. "current_line_only = true,"
+    .. "})<cr>",
   {}
 )
 omap(
   "t",
-  "<cmd>lua require'hop'.hint_char1({"..
-    "direction = require'hop.hint'.HintDirection.AFTER_CURSOR,"..
-    "current_line_only = true,"..
-    "hint_offset = -1,"..
-  "})<cr>",
+  "<cmd>lua require'hop'.hint_char1({"
+    .. "direction = require'hop.hint'.HintDirection.AFTER_CURSOR,"
+    .. "current_line_only = true,"
+    .. "hint_offset = -1,"
+    .. "})<cr>",
   {}
 )
 omap(
   "T",
-  "<cmd>lua require'hop'.hint_char1({"..
-    "direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,"..
-    "current_line_only = true,"..
-    "hint_offset = -1,"..
-  "})<cr>",
+  "<cmd>lua require'hop'.hint_char1({"
+    .. "direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,"
+    .. "current_line_only = true,"
+    .. "hint_offset = -1,"
+    .. "})<cr>",
   {}
 )
 
