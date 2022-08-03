@@ -199,10 +199,15 @@ return require("packer").startup(function(use)
           "javascript",
           "json",
           "lua",
+          "make",
+          "markdown",
           "php",
           "ruby",
           "yaml",
         },
+        highlight = {
+          enable = true,
+        }
       }
     end,
   }
