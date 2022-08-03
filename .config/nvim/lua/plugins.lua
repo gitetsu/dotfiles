@@ -370,11 +370,11 @@ return require("packer").startup(function(use)
   }
 
   use {
-     "tversteeg/registers.nvim",
-     event = "VimEnter",
-     setup = function()
-       vim.api.nvim_set_var("registers_delay", 500)
-     end,
+    "tversteeg/registers.nvim",
+    event = "VimEnter",
+    setup = function()
+      vim.api.nvim_set_var("registers_delay", 500)
+    end,
   }
 
   use {
