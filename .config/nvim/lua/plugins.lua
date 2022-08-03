@@ -23,6 +23,7 @@ return require("packer").startup(function(use)
   }
   use {
     "nvim-telescope/telescope.nvim",
+    tag = "0.1.0",
     requires = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
@@ -69,6 +70,8 @@ return require("packer").startup(function(use)
           b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Find Buffers" },
           f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find Files" },
           F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<cr>", "Find All Files" },
+          g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Grep Files" },
+          G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
           t = { "<cmd>NvimTreeFindFile<cr>", "Find In Tree" },
           T = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
         },
@@ -80,7 +83,8 @@ return require("packer").startup(function(use)
         l = {
           name = "Lsp",
           a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-          d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Go To Definition" },
+          d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Go To Definition(Preview)" },
+          D = { "<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition(New Window)" },
         },
       }, { prefix = "<leader>" })
     end,
