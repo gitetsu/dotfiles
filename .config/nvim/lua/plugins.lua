@@ -491,4 +491,12 @@ return require("packer").startup(function(use)
       require("persistence").setup()
     end,
   }
+
+  use {
+    "klen/nvim-config-local",
+    event = "VimEnter",
+    config = function()
+      require('config-local').setup {}
+    end,
+  }
 end)
