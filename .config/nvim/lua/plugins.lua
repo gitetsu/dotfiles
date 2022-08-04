@@ -207,7 +207,7 @@ return require("packer").startup(function(use)
         },
         highlight = {
           enable = true,
-        }
+        },
       }
     end,
   }
@@ -501,7 +501,7 @@ return require("packer").startup(function(use)
     "klen/nvim-config-local",
     event = "VimEnter",
     config = function()
-      require('config-local').setup {}
+      require("config-local").setup {}
     end,
   }
 end)
