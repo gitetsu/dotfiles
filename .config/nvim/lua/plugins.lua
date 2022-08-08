@@ -172,6 +172,18 @@ return require("packer").startup(function(use)
           require("lspsaga").init_lsp_saga()
         end,
       },
+      {
+        "williamboman/mason.nvim",
+        config = function()
+          require("mason").setup()
+        end,
+      },
+      {
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+          require("mason-lspconfig").setup()
+        end,
+      },
     },
     config = function()
       require("lspconfig").phpactor.setup {}
