@@ -92,6 +92,14 @@ source ~/.functions
 
 setopt inc_append_history
 setopt share_history
+setopt hist_ignore_dups
+setopt extended_history
+setopt hist_reduce_blanks
+
+setopt extended_glob
+setopt numeric_glob_sort
+
+setopt no_clobber
 
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
