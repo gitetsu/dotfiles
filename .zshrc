@@ -101,6 +101,14 @@ setopt numeric_glob_sort
 
 setopt no_clobber
 
+setopt list_rows_first
+setopt menu_complete
+
+setopt correct
+
+[ -n $(alias run-help) ] && unalias run-help
+autoload run-help
+
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
 if [[ -f ~/.zshrc.local ]]; then
