@@ -26,3 +26,7 @@ alias pg="pass git"
 alias t="terraform"
 alias td="TF_LOG=DEBUG TF_LOG_PATH=./terraform.log terraform"
 alias y="yadm"
+
+alias -s txt=bat
+alias -s log=bat
+alias -s lua=nvim
