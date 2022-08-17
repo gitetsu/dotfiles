@@ -316,6 +316,7 @@ return require("packer").startup(function(use)
           require("nvim-autopairs").setup()
         end,
       },
+      "hrsh7th/cmp-buffer",
       "onsails/lspkind.nvim",
     },
     event = "InsertEnter",
@@ -325,6 +326,7 @@ return require("packer").startup(function(use)
       cmp.setup {
         sources = {
           { name = "nvim_lsp" },
+          { name = 'buffer' },
         },
         formatting = {
           format = lspkind.cmp_format {
