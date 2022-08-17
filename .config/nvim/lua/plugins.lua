@@ -202,7 +202,9 @@ return require("packer").startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    requires = {},
+    requires = {
+      "windwp/nvim-ts-autotag",
+    },
     config = function()
       require("nvim-treesitter.configs").setup {
         ensure_installed = {
@@ -218,6 +220,9 @@ return require("packer").startup(function(use)
           "yaml",
         },
         highlight = {
+          enable = true,
+        },
+        autotag = {
           enable = true,
         },
       }
