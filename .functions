@@ -41,3 +41,7 @@ function b() {
 function bundleid() {
   osascript -e "id of app \"$@\""
 }
+
+function manb() {
+  man zshall | less -p "^       $1 "
+}
