@@ -326,7 +326,7 @@ return require("packer").startup(function(use)
       cmp.setup {
         sources = {
           { name = "nvim_lsp" },
-          { name = 'buffer' },
+          { name = "buffer" },
         },
         formatting = {
           format = lspkind.cmp_format {
