@@ -188,7 +188,7 @@ return require("packer").startup(function(use)
     },
     config = function()
       require("lspconfig").phpactor.setup {}
-      require("null-ls").setup({
+      require("null-ls").setup {
         sources = {
           require("null-ls").builtins.completion.spell,
           require("null-ls").builtins.diagnostics.actionlint,
@@ -197,7 +197,7 @@ return require("packer").startup(function(use)
           require("null-ls").builtins.diagnostics.zsh,
           require("null-ls").builtins.formatting.stylua,
         },
-      })
+      }
     end,
   }
 
