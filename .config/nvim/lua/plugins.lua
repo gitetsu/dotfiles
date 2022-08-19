@@ -166,6 +166,7 @@ return require("packer").startup(function(use)
     event = "BufReadPre",
     requires = {
       "folke/lua-dev.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
       {
         "glepnir/lspsaga.nvim",
         config = function()
@@ -187,6 +188,16 @@ return require("packer").startup(function(use)
     },
     config = function()
       require("lspconfig").phpactor.setup {}
+      require("null-ls").setup({
+        sources = {
+          require("null-ls").builtins.completion.spell,
+          require("null-ls").builtins.diagnostics.actionlint,
+          require("null-ls").builtins.diagnostics.checkmake,
+          require("null-ls").builtins.diagnostics.yamllint,
+          require("null-ls").builtins.diagnostics.zsh,
+          require("null-ls").builtins.formatting.stylua,
+        },
+      })
     end,
   }
 
