@@ -86,6 +86,11 @@ return require("packer").startup(function(use)
           d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Go To Definition(Preview)" },
           D = { "<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition(New Window)" },
         },
+        s = {
+          name = "Swap",
+          s = { "<cmd>lua require('iswap').iswap_with()<cr>", "Swap With This" },
+          S = { "<cmd>lua require('iswap').iswap()<cr>", "Swap" },
+        },
       }, { prefix = "<leader>" })
     end,
   }
@@ -215,6 +220,12 @@ return require("packer").startup(function(use)
     run = ":TSUpdate",
     requires = {
       "windwp/nvim-ts-autotag",
+      {
+        "mizlan/iswap.nvim",
+        config = function()
+          require("iswap").setup {}
+        end,
+      },
     },
     config = function()
       require("nvim-treesitter.configs").setup {
