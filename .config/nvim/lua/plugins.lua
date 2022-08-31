@@ -68,6 +68,7 @@ return require("packer").startup(function(use)
         e = {
           name = "Edit",
           J = { "<cmd>lua require('trevj').format_at_cursor()<cr>", "Split into lines" },
+          t = { "<cmd>lua require('nvim-toggler').toggle()<cr>", "Toggle word" },
         },
         f = {
           name = "Files",
@@ -457,6 +458,16 @@ return require("packer").startup(function(use)
     module = "trevj",
     config = function()
       require("trevj").setup()
+    end,
+  }
+
+  use {
+    "nguyenvukhang/nvim-toggler",
+    module = "nvim-toggler",
+    config = function()
+      require("nvim-toggler").setup {
+        remove_default_keybinds = true,
+      }
     end,
   }
 
