@@ -310,9 +310,11 @@ return require("packer").startup(function(use)
   use "kana/vim-smartchr"
 
   use {
-    "ur4ltz/surround.nvim",
+    "kylechui/nvim-surround",
+    tag = "*",
+    event = "VimEnter",
     config = function()
-      require("surround").setup { mappings_style = "sandwich" }
+      require("nvim-surround").setup {}
     end,
   }
 
