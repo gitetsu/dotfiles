@@ -65,6 +65,10 @@ return require("packer").startup(function(use)
     config = function()
       local wk = require "which-key"
       wk.register({
+        e = {
+          name = "Edit",
+          J = { "<cmd>lua require('trevj').format_at_cursor()<cr>", "Split into lines" },
+        },
         f = {
           name = "Files",
           b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Find Buffers" },
