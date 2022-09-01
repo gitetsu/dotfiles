@@ -24,6 +24,7 @@
 	ss = status -sb
 	st = status
 	up = pull --rebase
+	recovery = "! git log --graph --oneline --decorate --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}' )"
 [color]
 	ui = auto
 [core]
