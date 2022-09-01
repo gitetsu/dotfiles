@@ -90,6 +90,7 @@ return require("packer").startup(function(use)
           a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
           d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Go To Definition(Preview)" },
           D = { "<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition(New Window)" },
+          e = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle lsp_lines" },
         },
         s = {
           name = "Swap",
