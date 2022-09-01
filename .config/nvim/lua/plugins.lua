@@ -348,6 +348,7 @@ return require("packer").startup(function(use)
       },
       "hrsh7th/cmp-buffer",
       "onsails/lspkind.nvim",
+      "ray-x/cmp-treesitter",
     },
     event = "InsertEnter",
     config = function()
@@ -357,6 +358,7 @@ return require("packer").startup(function(use)
         sources = {
           { name = "nvim_lsp" },
           { name = "buffer" },
+          { name = "treesitter" },
         },
         formatting = {
           format = lspkind.cmp_format {
