@@ -502,23 +502,22 @@ return require("packer").startup(function(use)
     "Yazeed1s/minimal.nvim",
   }
 
-  use({
+  use {
     "catppuccin/nvim",
     as = "catppuccin",
     branch = "dev",
     config = function()
-      require("catppuccin").setup({
+      require("catppuccin").setup {
         transparent_background = true,
-      })
+      }
       -- [[vim.cmd "colorscheme catppuccisonokain"]]
-    end
-  })
+    end,
+  }
 
   use {
     "EdenEast/nightfox.nvim",
     config = function()
-      require("nightfox").setup({
-      })
+      require("nightfox").setup {}
     end,
   }
 
@@ -527,20 +526,19 @@ return require("packer").startup(function(use)
   }
 
   use {
-    'mastertinner/nvim-quantum',
+    "mastertinner/nvim-quantum",
     config = function()
       -- require('quantum').setup {}
     end,
   }
 
   use {
-    'marko-cerovac/material.nvim',
-    config = function()
-    end,
+    "marko-cerovac/material.nvim",
+    config = function() end,
   }
- 
+
   use {
-    "Th3Whit3Wolf/one-nvim"
+    "Th3Whit3Wolf/one-nvim",
   }
 
   use {
