@@ -495,12 +495,62 @@ return require("packer").startup(function(use)
 
   use {
     "sainnhe/sonokai",
-    config = [[vim.cmd "colorscheme sonokai"]],
+    -- config = [[vim.cmd "colorscheme sonokai"]],
   }
 
   use {
-    "mhartington/oceanic-next",
+    "Yazeed1s/minimal.nvim",
   }
+
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin",
+    branch = "dev",
+    config = function()
+      require("catppuccin").setup({
+        transparent_background = true,
+      })
+      -- [[vim.cmd "colorscheme catppuccisonokain"]]
+    end
+  })
+
+  use {
+    "EdenEast/nightfox.nvim",
+    config = function()
+      require("nightfox").setup({
+      })
+    end,
+  }
+
+  use {
+    "glepnir/zephyr-nvim",
+  }
+
+  use {
+    'mastertinner/nvim-quantum',
+    config = function()
+      -- require('quantum').setup {}
+    end,
+  }
+
+  use {
+    'marko-cerovac/material.nvim',
+    config = function()
+    end,
+  }
+ 
+  use {
+    "Th3Whit3Wolf/one-nvim"
+  }
+
+  use {
+    "navarasu/onedark.nvim",
+    config = function()
+      vim.cmd "colorscheme onedark"
+    end,
+  }
+
+  use { "rebelot/kanagawa.nvim" }
 
   use {
     "norcalli/nvim-colorizer.lua",
