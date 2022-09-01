@@ -29,7 +29,7 @@
 [core]
 	quotepath = false
 	precomposeunicode = true
-	pager = delta
+	pager = delta --side-by-side --width ${FZF_PREVIEW_COLUMNS-$COLUMNS}
 [push]
 	default = current
 	autoSetupRemote = true
