@@ -35,7 +35,8 @@ zinit wait'0' light-mode lucid for \
   atinit"alias gdc='gd --cached'" \
     wfxr/forgit \
   atload"bindkey '^x^f' zce" \
-    hchbaw/zce.zsh
+    hchbaw/zce.zsh \
+    zpm-zsh/undollar
 
 _anyframe-config () {
   zle -N _anyframe-gitmoji
