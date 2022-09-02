@@ -91,6 +91,7 @@ source ~/.aliases
 source ~/.exports
 source ~/.functions
 
+export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
 setopt inc_append_history
 setopt share_history
 setopt hist_ignore_dups
