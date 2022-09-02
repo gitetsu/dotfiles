@@ -32,9 +32,6 @@ local config = {
     {
       family = "Menlo",
     },
-    {
-      family = "Osaka",
-    },
     "Apple Color Emoji",
   },
   font_size = 11.0,
