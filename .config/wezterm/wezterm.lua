@@ -28,6 +28,7 @@ local config = {
 
   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   font = wezterm.font_with_fallback {
+    "D2Coding",
     {
       family = "Menlo",
     },
@@ -36,7 +37,7 @@ local config = {
     },
     "Apple Color Emoji",
   },
-  font_size = 9.0,
+  font_size = 11.0,
   adjust_window_size_when_changing_font_size = false,
 
   color_scheme = "Bright Lights Modified",
