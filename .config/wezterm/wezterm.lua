@@ -37,13 +37,19 @@ local config = {
   font_size = 11.0,
   adjust_window_size_when_changing_font_size = false,
 
-  color_scheme = "Bright Lights Modified",
+  color_scheme = "tender (base16)",
   color_schemes = {
     ["Adventure"] = {},
     ["Bright Lights Modified"] = bright_lights,
-    ["lovelace"] = {},
+    ["Gruvbox dark, pale (base16)"] = {},
     ["MaterialOcean"] = {},
+    ["lovelace"] = {},
+    -- ["tender (base16)"] = {},
+    ["tokyonight"] = {},
     ["Tomorrow Night"] = {},
+    ["wilmersdorf"] = {},
+    ["zenbones_dark"] = {},
+    ["zenwritten_dark"] = {},
   },
   window_background_opacity = 0.8,
 
