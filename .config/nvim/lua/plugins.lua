@@ -198,7 +198,8 @@ return require("packer").startup(function(use)
       },
     },
     config = function()
-      require("lspconfig").phpactor.setup {}
+      require("lspconfig")["tsserver"].setup {}
+      require("lspconfig")["phpactor"].setup {}
       require("null-ls").setup {
         sources = {
           require("null-ls").builtins.completion.spell,
