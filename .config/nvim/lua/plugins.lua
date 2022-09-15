@@ -585,6 +585,11 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "hashivim/vim-terraform",
+    ft = { "hcl", "tf", "tfvars", "terraformrc", "tfstate" }
+  }
+
+  use {
     "rcarriga/nvim-notify",
     event = "VimEnter",
     config = function()
