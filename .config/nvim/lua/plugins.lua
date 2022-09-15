@@ -76,7 +76,7 @@ return require("packer").startup(function(use)
           t = { "<cmd>lua require('nvim-toggler').toggle()<cr>", "Toggle word" },
         },
         f = {
-          name = "Files",
+          name = "Find",
           b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Find Buffers" },
           f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find Files" },
           F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<cr>", "Find All Files" },
@@ -84,6 +84,7 @@ return require("packer").startup(function(use)
           G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
           t = { "<cmd>NvimTreeFindFile<cr>", "Find In Tree" },
           T = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
+          u = { "<cmd>UrlView<cr>", "Find URLs" },
         },
         d = {
           name = "Display",
@@ -605,6 +606,16 @@ return require("packer").startup(function(use)
   use {
     "sindrets/winshift.nvim",
     event = "VimEnter",
+  }
+
+  use {
+    "axieax/urlview.nvim",
+    event = "VimEnter",
+    config = function()
+      require("urlview").setup {
+        default_picker = "telescope",
+      }
+    end,
   }
 
   use {
