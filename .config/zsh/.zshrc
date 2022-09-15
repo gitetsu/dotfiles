@@ -21,6 +21,7 @@ zinit wait lucid light-mode for \
       zsh-users/zsh-completions
 
 zinit wait'0' light-mode lucid for \
+  mattmc3/zman \
   mafredri/zsh-async \
   zdharma-continuum/history-search-multi-word \
   jasonmccreary/git-trim \
