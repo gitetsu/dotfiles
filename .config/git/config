@@ -43,7 +43,7 @@
 [fetch]
 	prune = true
 [interactive]
-	diffFilter = delta --color-only --syntax-theme ansi
+	diffFilter = delta --color-only --syntax-theme Coldark-Dark
 [delta]
 	navigate = true
 	line-numbers = true
