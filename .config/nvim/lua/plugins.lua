@@ -13,6 +13,11 @@ vim.cmd [[
   augroup end
 ]]
 
+-- https://github.com/wbthomason/packer.nvim/issues/756
+require("packer").init({
+  max_jobs = 8,
+})
+
 return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
   use {
