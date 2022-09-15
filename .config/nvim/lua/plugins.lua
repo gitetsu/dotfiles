@@ -102,6 +102,11 @@ return require("packer").startup(function(use)
           s = { "<cmd>lua require('iswap').iswap_with()<cr>", "Swap With This" },
           S = { "<cmd>lua require('iswap').iswap()<cr>", "Swap" },
         },
+        w = {
+          name = "Window",
+          w = { "<cmd>WinShift<cr>", "Start Win-Move mode targeting the current window for moving" },
+          s = { "<cmd>WinShift swap<cr>", "Swap the current window with another" },
+        },
       }, { prefix = "<leader>" })
     end,
   }
@@ -595,6 +600,11 @@ return require("packer").startup(function(use)
     config = function()
       vim.notify = require "notify"
     end,
+  }
+
+  use {
+    "sindrets/winshift.nvim",
+    event = "VimEnter",
   }
 
   use {
