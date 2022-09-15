@@ -14,9 +14,9 @@ vim.cmd [[
 ]]
 
 -- https://github.com/wbthomason/packer.nvim/issues/756
-require("packer").init({
+require("packer").init {
   max_jobs = 8,
-})
+}
 
 return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
@@ -586,7 +586,7 @@ return require("packer").startup(function(use)
 
   use {
     "hashivim/vim-terraform",
-    ft = { "hcl", "tf", "tfvars", "terraformrc", "tfstate" }
+    ft = { "hcl", "tf", "tfvars", "terraformrc", "tfstate" },
   }
 
   use {
