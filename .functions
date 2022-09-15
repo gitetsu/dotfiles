@@ -45,3 +45,12 @@ function bundleid() {
 function manb() {
   man zshall | less -p "^       $1 "
 }
+
+function p() {
+  pass $* &> /dev/null
+  if [ $? -eq 0 ]; then
+    pass $*
+  else
+    pass git $*
+  fi
+}
