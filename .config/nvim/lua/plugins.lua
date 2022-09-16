@@ -615,6 +615,11 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "jghauser/mkdir.nvim",
+    event = "VimEnter",
+  }
+
+  use {
     "folke/persistence.nvim",
     event = "BufReadPre",
     module = "persistence",
