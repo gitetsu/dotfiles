@@ -134,6 +134,11 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "rgroli/other.nvim",
+    event = "VimEnter",
+  }
+
+  use {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufReadPre",
     config = function()
@@ -277,6 +282,12 @@ return require("packer").startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter-textobjects",
   }
+
+  use {
+    "mfussenegger/nvim-treehopper",
+    event = "VimEnter",
+  }
+
   use {
     "p00f/nvim-ts-rainbow",
     config = function()
@@ -313,6 +324,15 @@ return require("packer").startup(function(use)
     keys = { "gc", "gcc" },
     config = function()
       require("Comment").setup {}
+    end,
+  }
+
+  use {
+    "mvllow/modes.nvim",
+    tag = "v0.2.0",
+    event = "VimEnter",
+    config = function()
+      require("modes").setup {}
     end,
   }
 
