@@ -196,6 +196,7 @@ return require("packer").startup(function(use)
       "jose-elias-alvarez/null-ls.nvim",
       {
         "glepnir/lspsaga.nvim",
+        branch = "main",
         config = function()
           require("lspsaga").init_lsp_saga()
         end,
@@ -433,7 +434,7 @@ return require("packer").startup(function(use)
   }
 
   use {
-    "Maan2003/lsp_lines.nvim",
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     config = function()
       vim.diagnostic.config {
         virtual_text = false,
@@ -539,7 +540,6 @@ return require("packer").startup(function(use)
   use {
     "catppuccin/nvim",
     as = "catppuccin",
-    branch = "dev",
     config = function()
       require("catppuccin").setup {
         transparent_background = true,
