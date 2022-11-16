@@ -217,6 +217,8 @@ return require("packer").startup(function(use)
     config = function()
       require("lspconfig")["tsserver"].setup {}
       require("lspconfig")["phpactor"].setup {}
+      require("lspconfig")["ruby_ls"].setup {}
+      require("lspconfig")["solargraph"].setup {}
       require("null-ls").setup {
         sources = {
           require("null-ls").builtins.completion.spell,
