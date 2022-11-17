@@ -325,6 +325,7 @@ return require("packer").startup(function(use)
 
   use {
     "lewis6991/gitsigns.nvim",
+    event = "BufReadPre",
     config = function()
       require("gitsigns").setup {}
     end,
@@ -601,6 +602,7 @@ return require("packer").startup(function(use)
 
   use {
     "petertriho/nvim-scrollbar",
+    event = "BufReadPre",
     config = function()
       require("scrollbar").setup()
       require("scrollbar.handlers.search").setup()
