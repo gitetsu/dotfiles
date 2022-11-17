@@ -288,9 +288,9 @@ return require("packer").startup(function(use)
         autotag = {
           enable = true,
         },
-      endwise = {
-        enable = true,
-      }
+        endwise = {
+          enable = true,
+        },
       }
     end,
   }
@@ -406,14 +406,14 @@ return require("packer").startup(function(use)
       "saadparwaiz1/cmp_luasnip",
       {
         "rafamadriz/friendly-snippets",
-      }
+      },
     },
     event = "InsertEnter",
     config = function()
       local cmp = require "cmp"
       local lspkind = require "lspkind"
       local luasnip = require "luasnip"
-      luasnip.filetype_extend("ruby", {"rails"})
+      luasnip.filetype_extend("ruby", { "rails" })
       cmp.setup {
         sources = {
           { name = "nvim_lsp" },
@@ -424,7 +424,7 @@ return require("packer").startup(function(use)
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
-          end
+          end,
         },
         formatting = {
           format = lspkind.cmp_format {
@@ -432,11 +432,11 @@ return require("packer").startup(function(use)
           },
         },
         mapping = {
-          ["<C-i>"] = cmp.mapping(function (fallback)
+          ["<C-i>"] = cmp.mapping(function(fallback)
             if luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
+              luasnip.expand_or_jump()
             else
-                fallback()
+              fallback()
             end
           end),
           ["<C-n>"] = function(fallback)
@@ -640,11 +640,11 @@ return require("packer").startup(function(use)
 
   use {
     "nvim-zh/colorful-winsep.nvim",
-    config = function ()
-        require("colorful-winsep").setup({
-          no_exec_files = { "packer", "TelescopePrompt", "mason", "NvimTree" },
-        })
-    end
+    config = function()
+      require("colorful-winsep").setup {
+        no_exec_files = { "packer", "TelescopePrompt", "mason", "NvimTree" },
+      }
+    end,
   }
 
   use {
