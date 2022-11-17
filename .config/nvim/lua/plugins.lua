@@ -233,6 +233,14 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup {}
+    end,
+    event = "BufReadPre",
+  }
+
+  use {
     "rmagatti/goto-preview",
     config = function()
       require("goto-preview").setup {
