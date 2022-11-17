@@ -260,6 +260,7 @@ return require("packer").startup(function(use)
           require("iswap").setup {}
         end,
       },
+      "RRethy/nvim-treesitter-endwise",
     },
     config = function()
       require("nvim-treesitter.configs").setup {
@@ -287,6 +288,9 @@ return require("packer").startup(function(use)
         autotag = {
           enable = true,
         },
+      endwise = {
+        enable = true,
+      }
       }
     end,
   }
