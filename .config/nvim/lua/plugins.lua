@@ -35,6 +35,10 @@ return require("packer").startup(function(use)
       {
         "nvim-telescope/telescope-symbols.nvim",
       },
+      {
+        "benfowler/telescope-luasnip.nvim",
+        module = "telescope._extensions.luasnip",
+      },
     },
     cmd = { "Telescope" },
     module = "telescope",
@@ -42,6 +46,7 @@ return require("packer").startup(function(use)
       local telescope = require "telescope"
       local actions = require "telescope.actions"
       telescope.load_extension "fzf"
+      telescope.load_extension "luasnip"
       telescope.setup {
         defaults = {
           sorting_strategy = "ascending",
@@ -82,6 +87,7 @@ return require("packer").startup(function(use)
           F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<cr>", "Find All Files" },
           g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Grep Files" },
           G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
+          s = { "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<cr>", "Find Snippets" },
           t = { "<cmd>NvimTreeFindFile<cr>", "Find In Tree" },
           T = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
           u = { "<cmd>UrlView<cr>", "Find URLs" },
