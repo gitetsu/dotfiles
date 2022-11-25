@@ -141,6 +141,13 @@ return require("packer").startup(function(use)
   use {
     "rgroli/other.nvim",
     event = "VimEnter",
+    config = function()
+      require("other-nvim").setup {
+        mappings = {
+          "rails",
+        },
+      }
+    end,
   }
 
   use {
