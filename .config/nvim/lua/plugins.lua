@@ -521,6 +521,11 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "jinh0/eyeliner.nvim",
+    event = "VimEnter",
+  }
+
+  use {
     "tversteeg/registers.nvim",
     event = "VimEnter",
     setup = function()
