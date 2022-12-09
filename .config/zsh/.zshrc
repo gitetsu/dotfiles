@@ -107,7 +107,6 @@ setopt numeric_glob_sort
 setopt no_clobber
 
 setopt list_rows_first
-setopt menu_complete
 
 setopt correct
 
