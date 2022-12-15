@@ -653,6 +653,12 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "kartikp10/noctis.nvim",
+    event = "VimEnter",
+    requires = { "rktjmp/lush.nvim" },
+  }
+
+  use {
     "sainnhe/sonokai",
     event = "VimEnter",
   }
