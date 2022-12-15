@@ -196,6 +196,7 @@ return require("packer").startup(function(use)
 
   use {
     "xiyaowong/nvim-transparent",
+    event = "BufEnter",
     config = function()
       require("transparent").setup {
         enable = true,
@@ -271,14 +272,15 @@ return require("packer").startup(function(use)
 
   use {
     "j-hui/fidget.nvim",
+    event = "BufReadPre",
     config = function()
       require("fidget").setup {}
     end,
-    event = "BufReadPre",
   }
 
   use {
     "rmagatti/goto-preview",
+    event = "VimEnter",
     config = function()
       require("goto-preview").setup {
         opacity = 10,
@@ -342,6 +344,7 @@ return require("packer").startup(function(use)
 
   use {
     "p00f/nvim-ts-rainbow",
+    event = "BufEnter",
     config = function()
       require("nvim-treesitter.configs").setup {
         rainbow = {
@@ -358,6 +361,7 @@ return require("packer").startup(function(use)
 
   use {
     "m-demare/hlargs.nvim",
+    event = "BufEnter",
     requires = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("hlargs").setup {}
@@ -398,7 +402,10 @@ return require("packer").startup(function(use)
     end,
   }
 
-  use "kana/vim-smartchr"
+  use {
+    "kana/vim-smartchr",
+    event = "VimEnter",
+  }
 
   use {
     "kylechui/nvim-surround",
@@ -411,6 +418,7 @@ return require("packer").startup(function(use)
 
   use {
     "johmsalas/text-case.nvim",
+    event = "VimEnter",
     config = function()
       require("textcase").setup {}
     end,
@@ -512,6 +520,7 @@ return require("packer").startup(function(use)
 
   use {
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    event = "BufEnter",
     config = function()
       vim.diagnostic.config {
         virtual_text = false,
@@ -630,28 +639,33 @@ return require("packer").startup(function(use)
   use {
     "famiu/nvim-reload",
     requires = { "nvim-lua/plenary.nvim" },
+    event = "VimEnter",
   }
 
   use {
     "tomasr/molokai",
+    event = "VimEnter",
   }
 
   use {
     "folke/tokyonight.nvim",
+    event = "VimEnter",
   }
 
   use {
     "sainnhe/sonokai",
-    -- config = [[vim.cmd "colorscheme sonokai"]],
+    event = "VimEnter",
   }
 
   use {
     "Yazeed1s/minimal.nvim",
+    event = "VimEnter",
   }
 
   use {
     "catppuccin/nvim",
     as = "catppuccin",
+    event = "VimEnter",
     config = function()
       require("catppuccin").setup {
         transparent_background = true,
@@ -662,6 +676,7 @@ return require("packer").startup(function(use)
 
   use {
     "EdenEast/nightfox.nvim",
+    event = "VimEnter",
     config = function()
       require("nightfox").setup {}
     end,
@@ -669,10 +684,12 @@ return require("packer").startup(function(use)
 
   use {
     "glepnir/zephyr-nvim",
+    event = "VimEnter",
   }
 
   use {
     "mastertinner/nvim-quantum",
+    event = "VimEnter",
     config = function()
       -- require('quantum').setup {}
     end,
@@ -680,21 +697,27 @@ return require("packer").startup(function(use)
 
   use {
     "marko-cerovac/material.nvim",
+    event = "VimEnter",
     config = function() end,
   }
 
   use {
     "Th3Whit3Wolf/one-nvim",
+    event = "VimEnter",
   }
 
   use {
     "navarasu/onedark.nvim",
+    event = "BufEnter",
     config = function()
       vim.cmd "colorscheme onedark"
     end,
   }
 
-  use { "rebelot/kanagawa.nvim" }
+  use {
+    "rebelot/kanagawa.nvim",
+    event = "VimEnter",
+  }
 
   use {
     "norcalli/nvim-colorizer.lua",
@@ -712,6 +735,7 @@ return require("packer").startup(function(use)
 
   use {
     "nvim-zh/colorful-winsep.nvim",
+    event = "BufEnter",
     config = function()
       require("colorful-winsep").setup {
         no_exec_files = { "packer", "TelescopePrompt", "mason", "NvimTree" },
@@ -721,6 +745,7 @@ return require("packer").startup(function(use)
 
   use {
     "kevinhwang91/nvim-hlslens",
+    event = "BufEnter",
   }
 
   use {
