@@ -709,8 +709,7 @@ return require("packer").startup(function(use)
   use {
     "navarasu/onedark.nvim",
     event = "BufEnter",
-    config = function()
-    end,
+    config = function() end,
   }
 
   use {
