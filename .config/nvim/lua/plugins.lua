@@ -710,7 +710,13 @@ return require("packer").startup(function(use)
     "navarasu/onedark.nvim",
     event = "BufEnter",
     config = function()
-      vim.cmd "colorscheme onedark"
+    end,
+  }
+
+  use {
+    "rmehri01/onenord.nvim",
+    config = function()
+      vim.cmd "colorscheme onenord"
     end,
   }
 
