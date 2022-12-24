@@ -413,6 +413,14 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "Dkendal/nvim-treeclimber",
+    event = "VimEnter",
+    config = function()
+      require("nvim-treeclimber").setup {}
+    end,
+  }
+
+  use {
     "kylechui/nvim-surround",
     tag = "*",
     event = "VimEnter",
