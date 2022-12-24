@@ -111,6 +111,11 @@ return require("packer").startup(function(use)
           s = { "<cmd>lua require('iswap').iswap_with()<cr>", "Swap With This" },
           S = { "<cmd>lua require('iswap').iswap()<cr>", "Swap" },
         },
+        t = {
+          name = "Toggle",
+          f = { "<cmd>NvimTreeToggle<cr>", "Toggle File Tree" },
+          u = { "<cmd>UndotreeToggle<cr>", "Toggle Undo Tree" },
+        },
         w = {
           name = "Window",
           w = { "<cmd>WinShift<cr>", "Start Win-Move mode targeting the current window for moving" },
@@ -544,6 +549,18 @@ return require("packer").startup(function(use)
   }
 
   use { "mbbill/undotree", cmd = "UndotreeToggle" }
+  use {
+    "kevinhwang91/nvim-fundo",
+    requires = "kevinhwang91/promise-async",
+    run = function()
+      require("fundo").install {}
+    end,
+    event = "VimEnter",
+    config = function()
+      vim.o.undofile = true
+      require("fundo").setup {}
+    end,
+  }
 
   use {
     "phaazon/hop.nvim",
