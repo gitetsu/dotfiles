@@ -374,6 +374,17 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "asiryk/auto-hlsearch.nvim",
+    event = "BufEnter",
+    tag = "1.0.0",
+    config = function()
+      require("auto-hlsearch").setup {
+        create_commands = false,
+      }
+    end,
+  }
+
+  use {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
     config = function()
