@@ -218,8 +218,9 @@ return require("packer").startup(function(use)
       {
         "glepnir/lspsaga.nvim",
         branch = "main",
+        event = "BufRead",
         config = function()
-          require("lspsaga").init_lsp_saga()
+          require("lspsaga").setup {}
         end,
       },
       {
