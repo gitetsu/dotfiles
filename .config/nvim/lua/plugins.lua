@@ -79,7 +79,7 @@ return require("packer").startup(function(use)
       wk.register({
         e = {
           name = "Edit",
-          J = { "<cmd>lua require('trevj').format_at_cursor()<cr>", "Split into lines" },
+          J = { "<cmd>TSJToggle<cr>", "Toggle Split / Join" },
         },
         f = {
           name = "Find",
@@ -618,10 +618,10 @@ return require("packer").startup(function(use)
   }
 
   use {
-    "AckslD/nvim-trevJ.lua",
-    module = "trevj",
+    "Wansmer/treesj",
+    cmd = "TSJToggle",
     config = function()
-      require("trevj").setup()
+      require("treesj").setup()
     end,
   }
 
