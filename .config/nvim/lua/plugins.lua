@@ -308,13 +308,13 @@ return require("packer").startup(function(use)
       },
       "RRethy/nvim-treesitter-endwise",
       {
-        'ckolkey/ts-node-action',
-        requires = { 'nvim-treesitter' },
+        "ckolkey/ts-node-action",
+        requires = { "nvim-treesitter" },
         event = "VimEnter",
         config = function()
           require("ts-node-action").setup {}
-        end
-      }
+        end,
+      },
     },
     config = function()
       require("nvim-treesitter.configs").setup {
