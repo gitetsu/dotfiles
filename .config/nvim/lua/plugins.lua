@@ -79,6 +79,7 @@ return require("packer").startup(function(use)
       wk.register({
         e = {
           name = "Edit",
+          j = { "<cmd>lua require('ts-node-action').node_action", "Node Action" },
           J = { "<cmd>TSJToggle<cr>", "Toggle Split / Join" },
         },
         f = {
@@ -306,6 +307,14 @@ return require("packer").startup(function(use)
         end,
       },
       "RRethy/nvim-treesitter-endwise",
+      {
+        'ckolkey/ts-node-action',
+        requires = { 'nvim-treesitter' },
+        event = "VimEnter",
+        config = function()
+          require("ts-node-action").setup {}
+        end
+      }
     },
     config = function()
       require("nvim-treesitter.configs").setup {
