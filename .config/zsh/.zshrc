@@ -90,8 +90,8 @@ bindkey '^p' history-beginning-search-backward
 bindkey '^n' history-beginning-search-forward
 bindkey '^x^d' kill-word
 
-source ~/.aliases
 source ~/.exports
+source ~/.aliases
 source ~/.functions
 
 export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
