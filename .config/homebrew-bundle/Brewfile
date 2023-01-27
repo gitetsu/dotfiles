@@ -127,7 +127,6 @@ brew "htop"
 brew "httpstat"
 brew "httrack"
 brew "hub"
-brew "hyperkit", link: false
 brew "icdiff"
 brew "ilmbase"
 brew "imagemagick"
