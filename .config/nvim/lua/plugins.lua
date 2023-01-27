@@ -79,7 +79,7 @@ return require("packer").startup(function(use)
       wk.register({
         e = {
           name = "Edit",
-          j = { "<cmd>lua require('ts-node-action').node_action", "Node Action" },
+          j = { "<cmd>lua require('ts-node-action').node_action()<cr>", "Node Action" },
           J = { "<cmd>TSJToggle<cr>", "Toggle Split / Join" },
         },
         f = {
