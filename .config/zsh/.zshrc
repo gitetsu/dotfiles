@@ -132,7 +132,9 @@ if (( $+commands[starship] )); then
 fi
 
 if (( $+commands[asdf] )); then
-  . /usr/local/opt/asdf/libexec/asdf.sh
+  export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
+  export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/asdfrc"
+  . $(brew --prefix)/opt/asdf/libexec/asdf.sh
 fi
 
 # Fig post block. Keep at the bottom of this file.
