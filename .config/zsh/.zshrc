@@ -64,7 +64,7 @@ _anyframe-edit-yadm-files () {
 }
 
 _fzf-widgets-config () {
-  bindkey '^[ds'  fzf-select-docker-widget
+  bindkey '^[ds' fzf-select-docker-widget
   bindkey '^[dc' fzf-docker-remove-containers
   bindkey '^[di' fzf-docker-remove-images
   bindkey '^[dv' fzf-docker-remove-volumes
