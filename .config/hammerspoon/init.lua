@@ -42,6 +42,9 @@ end)
 hs.hotkey.bind(modifier(), "k", function()
   focusWithMouse "Kindle"
 end)
+hs.hotkey.bind(modifier(), "m", function()
+  focusWithMouse "Tutanota Desktop"
+end)
 hs.hotkey.bind(modifier(), "s", function()
   focusWithMouse "System Preferences"
 end)
