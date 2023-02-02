@@ -30,11 +30,14 @@ end)
 hs.hotkey.bind(modifier(), "d", function()
   focusWithMouse "Dictionary"
 end)
+hs.hotkey.bind(modifier(), "e", function()
+  focusWithMouse "Cryptomator"
+end)
 hs.hotkey.bind(modifier(), "f", function()
   focusWithMouse "Finder"
 end)
 hs.hotkey.bind(modifier(), "g", function()
-  focusWithMouse "Google Chrome"
+  focusWithMouse "Brave Browser"
 end)
 hs.hotkey.bind(modifier(), "i", function()
   focusWithMouse "WezTerm"
@@ -44,6 +47,12 @@ hs.hotkey.bind(modifier(), "k", function()
 end)
 hs.hotkey.bind(modifier(), "m", function()
   focusWithMouse "Tutanota Desktop"
+end)
+hs.hotkey.bind(modifier(), "n", function()
+  focusWithMouse "NetNewsWire"
+end)
+hs.hotkey.bind(modifier(), "o", function()
+  focusWithMouse "Books"
 end)
 hs.hotkey.bind(modifier(), "s", function()
   focusWithMouse "System Preferences"
