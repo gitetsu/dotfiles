@@ -17,10 +17,6 @@ end
 hs.loadSpoon "ReloadConfiguration"
 spoon.ReloadConfiguration:start()
 
-if hs.fs.displayName "local.lua" then
-  require "local"
-end
-
 hs.hotkey.bind(modifier(), "a", function()
   focusWithMouse "Activity Monitor"
 end)
@@ -60,3 +56,7 @@ end)
 hs.hotkey.bind(modifier(), "v", function()
   focusWithMouse "MacVim"
 end)
+
+if hs.fs.displayName "local.lua" then
+  require "local"
+end
