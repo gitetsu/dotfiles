@@ -533,6 +533,13 @@ return require("packer").startup(function(use)
             end
           end,
         },
+        sorting = {
+          comparators = {
+            function(...)
+              return require("cmp_buffer"):compare_locality(...)
+            end,
+          },
+        },
       }
       local cmp_autopairs = require "nvim-autopairs.completion.cmp"
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
