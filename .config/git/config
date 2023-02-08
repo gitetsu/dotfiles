@@ -16,6 +16,7 @@
 	l1 = log --oneline
 	lp = log -p
 	ls = log --stat
+	pf = push --force-with-lease --force-if-includes
 	rb = rebase
 	rbm = rebase master
 	sb = show-branch master HEAD
