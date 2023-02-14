@@ -28,6 +28,7 @@ local config = {
 
   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   font = wezterm.font_with_fallback {
+    "UDEV Gothic NF",
     "D2Coding",
     {
       family = "Menlo",
@@ -78,9 +79,13 @@ local config = {
     },
     { key = "-", mods = "LEADER|CTRL", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
     { key = "h", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Left" } },
+    { key = "h", mods = "LEADER|SHIFT", action = wezterm.action.RotatePanes 'Clockwise' },
+    { key = "{", mods = "LEADER", action = wezterm.action { MoveTabRelative = -1 } },
     { key = "j", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Down" } },
     { key = "k", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Up" } },
     { key = "l", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Right" } },
+    { key = "l", mods = "LEADER|SHIFT", action = wezterm.action.RotatePanes 'CounterClockwise' },
+    { key = "}", mods = "LEADER", action = wezterm.action { MoveTabRelative = 1 } },
 
     -- tabs
     { key = "c", mods = "LEADER|CTRL", action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
