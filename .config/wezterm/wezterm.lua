@@ -26,6 +26,7 @@ bright_lights.cursor_bg = "#ffc251"
 
 local config = {
   audible_bell = "Disabled",
+  front_end = "WebGpu",
 
   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   font = wezterm.font_with_fallback {
@@ -87,6 +88,8 @@ local config = {
     { key = "l", mods = "LEADER|CTRL", action = act { ActivatePaneDirection = "Right" } },
     { key = "l", mods = "LEADER|SHIFT", action = act.RotatePanes "CounterClockwise" },
     { key = "}", mods = "LEADER", action = act { MoveTabRelative = 1 } },
+    { key = "g", mods = "LEADER|CTRL", action = act.TogglePaneZoomState },
+    { key = ";", mods = "LEADER|CTRL", action = act.PaneSelect },
 
     -- tabs
     { key = "c", mods = "LEADER|CTRL", action = act { SpawnTab = "CurrentPaneDomain" } },
@@ -101,12 +104,22 @@ local config = {
     },
     { key = "n", mods = "LEADER|CTRL", action = act { ActivateTabRelative = 1 } },
     { key = "{", mods = "LEADER", action = act { MoveTabRelative = -1 } },
+    { key = "o", mods = "LEADER|CTRL", action = act.ActivateLastTab },
     { key = "p", mods = "LEADER|CTRL", action = act { ActivateTabRelative = -1 } },
     { key = "}", mods = "LEADER", action = act { MoveTabRelative = 1 } },
-    { key = "s", mods = "LEADER|CTRL", action = act.QuickSelect },
+    { key = "1", mods = "LEADER|CTRL", action = act { ActivateTab = 0 } },
+    { key = "2", mods = "LEADER|CTRL", action = act { ActivateTab = 1 } },
+    { key = "3", mods = "LEADER|CTRL", action = act { ActivateTab = 2 } },
+    { key = "4", mods = "LEADER|CTRL", action = act { ActivateTab = 3 } },
+    { key = "5", mods = "LEADER|CTRL", action = act { ActivateTab = 4 } },
+    { key = "6", mods = "LEADER|CTRL", action = act { ActivateTab = 5 } },
+    { key = "7", mods = "LEADER|CTRL", action = act { ActivateTab = 6 } },
+    { key = "8", mods = "LEADER|CTRL", action = act { ActivateTab = 7 } },
+    { key = "9", mods = "LEADER|CTRL", action = act { ActivateTab = 8 } },
 
     -- copy
     { key = "[", mods = "LEADER|CTRL", action = "ActivateCopyMode" },
+    { key = "w", mods = "LEADER|CTRL", action = act.QuickSelect },
   },
 }
 
