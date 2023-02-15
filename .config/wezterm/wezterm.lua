@@ -1,4 +1,5 @@
 local wezterm = require "wezterm"
+local act = wezterm.action
 
 local local_config = function()
   local ok, _ = pcall(require, "local")
@@ -69,38 +70,40 @@ local config = {
 
   leader = { key = "t", mods = "CTRL" },
   keys = {
-    { key = "t", mods = "LEADER|CTRL", action = wezterm.action { SendKey = { key = "t", mods = "CTRL" } } },
+    { key = "t", mods = "LEADER|CTRL", action = act { SendKey = { key = "t", mods = "CTRL" } } },
 
     -- panes
     {
       key = "|",
       mods = "LEADER|SHIFT",
-      action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
+      action = act { SplitHorizontal = { domain = "CurrentPaneDomain" } },
     },
-    { key = "-", mods = "LEADER|CTRL", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
-    { key = "h", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Left" } },
-    { key = "h", mods = "LEADER|SHIFT", action = wezterm.action.RotatePanes "Clockwise" },
-    { key = "{", mods = "LEADER", action = wezterm.action { MoveTabRelative = -1 } },
-    { key = "j", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Down" } },
-    { key = "k", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Up" } },
-    { key = "l", mods = "LEADER|CTRL", action = wezterm.action { ActivatePaneDirection = "Right" } },
-    { key = "l", mods = "LEADER|SHIFT", action = wezterm.action.RotatePanes "CounterClockwise" },
-    { key = "}", mods = "LEADER", action = wezterm.action { MoveTabRelative = 1 } },
+    { key = "-", mods = "LEADER|CTRL", action = act { SplitVertical = { domain = "CurrentPaneDomain" } } },
+    { key = "h", mods = "LEADER|CTRL", action = act { ActivatePaneDirection = "Left" } },
+    { key = "h", mods = "LEADER|SHIFT", action = act.RotatePanes "Clockwise" },
+    { key = "{", mods = "LEADER", action = act { MoveTabRelative = -1 } },
+    { key = "j", mods = "LEADER|CTRL", action = act { ActivatePaneDirection = "Down" } },
+    { key = "k", mods = "LEADER|CTRL", action = act { ActivatePaneDirection = "Up" } },
+    { key = "l", mods = "LEADER|CTRL", action = act { ActivatePaneDirection = "Right" } },
+    { key = "l", mods = "LEADER|SHIFT", action = act.RotatePanes "CounterClockwise" },
+    { key = "}", mods = "LEADER", action = act { MoveTabRelative = 1 } },
 
     -- tabs
-    { key = "c", mods = "LEADER|CTRL", action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
+    { key = "c", mods = "LEADER|CTRL", action = act { SpawnTab = "CurrentPaneDomain" } },
     {
       key = "d",
       mods = "LEADER|CTRL",
-      action = wezterm.action_callback(function(window, pane)
+      action = wezterm.action_callback(function(window, _)
         local overrides = window:get_config_overrides() or {}
         overrides.enable_tab_bar = not overrides.enable_tab_bar
         window:set_config_overrides(overrides)
       end),
     },
-    { key = "n", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative = 1 } },
-    { key = "p", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative = -1 } },
-    { key = "s", mods = "LEADER|CTRL", action = wezterm.action.QuickSelect },
+    { key = "n", mods = "LEADER|CTRL", action = act { ActivateTabRelative = 1 } },
+    { key = "{", mods = "LEADER", action = act { MoveTabRelative = -1 } },
+    { key = "p", mods = "LEADER|CTRL", action = act { ActivateTabRelative = -1 } },
+    { key = "}", mods = "LEADER", action = act { MoveTabRelative = 1 } },
+    { key = "s", mods = "LEADER|CTRL", action = act.QuickSelect },
 
     -- copy
     { key = "[", mods = "LEADER|CTRL", action = "ActivateCopyMode" },
