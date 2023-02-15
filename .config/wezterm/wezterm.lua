@@ -100,6 +100,7 @@ local config = {
     },
     { key = "n", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative = 1 } },
     { key = "p", mods = "LEADER|CTRL", action = wezterm.action { ActivateTabRelative = -1 } },
+    { key = "s", mods = "LEADER|CTRL", action = wezterm.action.QuickSelect },
 
     -- copy
     { key = "[", mods = "LEADER|CTRL", action = "ActivateCopyMode" },
