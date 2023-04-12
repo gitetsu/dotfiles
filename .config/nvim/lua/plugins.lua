@@ -204,8 +204,7 @@ return require("packer").startup(function(use)
     "xiyaowong/nvim-transparent",
     event = "BufEnter",
     config = function()
-      require("transparent").setup {
-      }
+      require("transparent").setup {}
     end,
   }
 
