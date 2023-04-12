@@ -205,7 +205,6 @@ return require("packer").startup(function(use)
     event = "BufEnter",
     config = function()
       require("transparent").setup {
-        enable = true,
       }
     end,
   }
@@ -238,7 +237,7 @@ return require("packer").startup(function(use)
       },
     },
     config = function()
-      require("lspconfig").sumneko_lua.setup {
+      require("lspconfig").lua_ls.setup {
         settings = {
           Lua = {
             runtime = {
@@ -810,6 +809,9 @@ return require("packer").startup(function(use)
   use {
     "kevinhwang91/nvim-hlslens",
     event = "BufEnter",
+    config = function()
+      require("hlslens").setup()
+    end,
   }
 
   use {
