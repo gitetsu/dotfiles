@@ -342,6 +342,9 @@ return require("packer").startup(function(use)
         highlight = {
           enable = true,
         },
+        indent = {
+          enable = true,
+        },
         autotag = {
           enable = true,
         },
@@ -379,7 +382,7 @@ return require("packer").startup(function(use)
 
   use {
     "m-demare/hlargs.nvim",
-    event = "BufEnter",
+    event = "VimEnter",
     requires = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("hlargs").setup {}
