@@ -27,6 +27,9 @@ return require("packer").startup(function(use)
     "nathom/filetype.nvim",
   }
   use {
+    "stevearc/dressing.nvim",
+  }
+  use {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.0",
     requires = {
