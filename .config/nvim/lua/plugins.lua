@@ -289,14 +289,14 @@ return require("packer").startup(function(use)
         debug = true,
         bind = true, -- This is mandatory, otherwise border config won't get registered.
         handler_opts = {
-          border = "rounded"
+          border = "rounded",
         },
-        hint_prefix = "🤖"
+        hint_prefix = "🤖",
       }
 
       require("lsp_signature").setup(config)
       require("lsp_signature").on_attach(config)
-    end
+    end,
   }
 
   use {
