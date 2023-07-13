@@ -109,6 +109,7 @@ return require("packer").startup(function(use)
           d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Go To Definition(Preview)" },
           D = { "<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition(New Window)" },
           e = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle lsp_lines" },
+          k = { "<cmd>lua require('lsp_signature').toggle_float_win()<cr>", "Toggle lsp_signature" },
         },
         s = {
           name = "Swap",
@@ -278,6 +279,24 @@ return require("packer").startup(function(use)
         },
       }
     end,
+  }
+
+  use {
+    "ray-x/lsp_signature.nvim",
+    event = "VimEnter",
+    config = function()
+      local config = {
+        debug = true,
+        bind = true, -- This is mandatory, otherwise border config won't get registered.
+        handler_opts = {
+          border = "rounded"
+        },
+        hint_prefix = "🤖"
+      }
+
+      require("lsp_signature").setup(config)
+      require("lsp_signature").on_attach(config)
+    end
   }
 
   use {
