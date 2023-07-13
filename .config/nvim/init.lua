@@ -69,9 +69,8 @@ end
 -- normal
 nnoremap("j", "gj")
 nnoremap("k", "gk")
-map("gj", "<cmd>lua require'hop'.hint_char1({ current_line_only = false, multi_windows = false })<cr>", {})
-map("gk", "<cmd>lua require'hop'.hint_char2({ current_line_only = false, multi_windows = false })<cr>", {})
-map("gl", "<cmd>lua require'hop'.hint_lines({ current_line_only = false, multi_windows = false })<cr>", {})
+map("gj", "<cmd>lua require'flash'.jump({search = { forward = true, wrap = true, multi_window = false }})<cr>", {})
+map("gk", "<cmd>lua require('flash').treesitter({})<cr>", {})
 
 -- insert/command
 icnoremap("<C-b>", "<Left>", { silent = false })

@@ -625,11 +625,17 @@ return require("packer").startup(function(use)
   }
 
   use {
-    "phaazon/hop.nvim",
-    branch = "v2",
+    "folke/flash.nvim",
     event = "VimEnter",
     config = function()
-      require("hop").setup {}
+      require("flash").setup {
+        label = {
+          uppercase = false,
+          rainbow = {
+            enabled = true,
+          }
+        }
+      }
     end,
   }
 
