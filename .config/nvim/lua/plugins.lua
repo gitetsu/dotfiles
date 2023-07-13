@@ -633,8 +633,8 @@ return require("packer").startup(function(use)
           uppercase = false,
           rainbow = {
             enabled = true,
-          }
-        }
+          },
+        },
       }
     end,
   }
