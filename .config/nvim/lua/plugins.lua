@@ -841,9 +841,9 @@ return require("packer").startup(function(use)
 
   use {
     "kevinhwang91/nvim-hlslens",
-    event = "BufEnter",
+    event = "VimEnter",
     config = function()
-      require("hlslens").setup()
+      require("hlslens").setup {}
     end,
   }
 
