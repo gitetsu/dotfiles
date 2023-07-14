@@ -844,6 +844,14 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "Wansmer/sibling-swap.nvim",
+    event = "VimEnter",
+    config = function()
+      require("sibling-swap").setup {}
+    end,
+  }
+
+  use {
     "kevinhwang91/nvim-hlslens",
     event = "VimEnter",
     config = function()
