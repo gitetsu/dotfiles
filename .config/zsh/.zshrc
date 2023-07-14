@@ -115,8 +115,8 @@ autoload run-help
 
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
-if [[ -f ~/.zshrc.local ]]; then
-  source ~/.zshrc.local
+if [[ -f $ZDOTDIR/local.zshrc ]]; then
+  source $ZDOTDIR/local.zshrc
 fi
 
 if [ -e /usr/local/share/zsh-completions ]; then
