@@ -922,4 +922,9 @@ return require("packer").startup(function(use)
       require("config-local").setup {}
     end,
   }
+
+  use {
+    "github/copilot.vim",
+    event = "VimEnter",
+  }
 end)
