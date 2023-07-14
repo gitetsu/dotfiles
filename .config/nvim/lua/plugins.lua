@@ -103,6 +103,10 @@ return require("packer").startup(function(use)
           l = { "<cmd>:set list!<cr>" },
           p = { "<cmd>:set paste!<cr>" },
         },
+        g = {
+          name = "Git",
+          v = { "<cmd>OpenInGHFileLines<cr>", "Open in GitHub" },
+        },
         l = {
           name = "Lsp",
           a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -925,6 +929,11 @@ return require("packer").startup(function(use)
 
   use {
     "github/copilot.vim",
+    event = "VimEnter",
+  }
+
+  use {
+    "almo7aya/openingh.nvim",
     event = "VimEnter",
   }
 end)
