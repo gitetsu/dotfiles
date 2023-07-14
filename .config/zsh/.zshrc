@@ -119,8 +119,8 @@ if [[ -f $ZDOTDIR/local.zshrc ]]; then
   source $ZDOTDIR/local.zshrc
 fi
 
-if [ -e /usr/local/share/zsh-completions ]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
+if [ -e $(brew --prefix)/share/zsh-completions ]; then
+  fpath=($(brew --prefix)/share/zsh-completions $fpath)
 fi
 
 if (( $+commands[direnv] )); then
