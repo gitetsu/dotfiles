@@ -847,7 +847,9 @@ return require("packer").startup(function(use)
     "Wansmer/sibling-swap.nvim",
     event = "VimEnter",
     config = function()
-      require("sibling-swap").setup {}
+      require("sibling-swap").setup {
+        highlight_node_at_cursor = true,
+      }
     end,
   }
 
