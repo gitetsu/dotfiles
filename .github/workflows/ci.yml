@@ -18,7 +18,7 @@ jobs:
           unzip /tmp/stylua-linux.zip -d /tmp
           chmod +x /tmp/stylua
       - name: Execute stylua
-        run: /tmp/stylua --config-path .config/lua/stylua.toml -g '.*/' -g '*.lua' -v .
+        run: /tmp/stylua --config-path .config/stylua/stylua.toml -g '.*/' -g '*.lua' -v .
       - name: Check if there are any changes
         id: check
         continue-on-error: true
