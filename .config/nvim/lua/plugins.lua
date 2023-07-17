@@ -490,7 +490,25 @@ return require("packer").startup(function(use)
 
   use {
     "mhartington/formatter.nvim",
-    event = "BufWritePre",
+    event = "VimEnter",
+    config = function()
+      local augroup = vim.api.nvim_create_augroup("AutoFormatGroup", { clear = true })
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        pattern = "*",
+        group = augroup,
+        command = "FormatWrite",
+      })
+      require("formatter").setup {
+        filetype = {
+          lua = {
+            require("formatter.filetypes.lua").stylua,
+          },
+          ["*"] = {
+            require("formatter.filetypes.any").remove_trailing_whitespace,
+          },
+        },
+      }
+    end,
   }
 
   use {
