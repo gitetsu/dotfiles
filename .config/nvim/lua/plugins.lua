@@ -827,14 +827,42 @@ return require("packer").startup(function(use)
 
   use {
     "rmehri01/onenord.nvim",
+    config = function() end,
+  }
+
+  use {
+    "maxmx03/FluoroMachine.nvim",
     config = function()
-      vim.cmd "colorscheme onenord"
+      local fm = require "fluoromachine"
+      fm.setup {
+        transparent = true,
+        theme = "retrowave",
+      }
+      vim.cmd "colorscheme fluoromachine"
     end,
+  }
+
+  use {
+    "AlexvZyl/nordic.nvim",
+    event = "VimEnter",
+  }
+
+  use {
+    "RRethy/nvim-base16",
+    event = "VimEnter",
   }
 
   use {
     "rebelot/kanagawa.nvim",
     event = "VimEnter",
+  }
+
+  use {
+    "JoosepAlviste/palenightfall.nvim",
+    event = "VimEnter",
+    config = function()
+      -- require("palenightfall").setup {}
+    end,
   }
 
   use {
