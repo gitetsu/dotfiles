@@ -55,7 +55,7 @@ config = {
     ["zenbones_dark"] = {},
     ["zenwritten_dark"] = {},
   },
-  window_background_opacity = 0.8,
+  window_background_opacity = 0.75,
 
   default_cursor_style = "BlinkingBlock",
   cursor_blink_rate = 700,
