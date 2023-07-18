@@ -866,6 +866,18 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "folke/styler.nvim",
+    config = function()
+      require("styler").setup {
+        themes = {
+          lua = { colorscheme = "fluoromachine" },
+          help = { colorscheme = "kanagawa" },
+        },
+      }
+    end,
+  }
+
+  use {
     "norcalli/nvim-colorizer.lua",
     event = "BufReadPre",
   }
