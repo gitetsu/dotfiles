@@ -467,7 +467,7 @@ return require("packer").startup(function(use)
     "Dkendal/nvim-treeclimber",
     event = "VimEnter",
     config = function()
-      require("nvim-treeclimber").setup {}
+      require("nvim-treeclimber").setup()
     end,
   }
 
