@@ -41,14 +41,14 @@ config = {
   font_size = 11.0,
   adjust_window_size_when_changing_font_size = false,
 
-  color_scheme = "tender (base16)",
+  color_scheme = "Bright Lights Modified",
   color_schemes = {
     ["Adventure"] = {},
     ["Bright Lights Modified"] = bright_lights,
     ["Gruvbox dark, pale (base16)"] = {},
     ["MaterialOcean"] = {},
     ["lovelace"] = {},
-    -- ["tender (base16)"] = {},
+    ["tender (base16)"] = {},
     ["tokyonight"] = {},
     ["Tomorrow Night"] = {},
     ["wilmersdorf"] = {},
