@@ -24,7 +24,8 @@ end
 local bright_lights = wezterm.get_builtin_color_schemes()["Bright Lights"]
 bright_lights.cursor_bg = "#ffc251"
 
-local config = {
+local config = wezterm.config_builder()
+config = {
   audible_bell = "Disabled",
   front_end = "WebGpu",
 
