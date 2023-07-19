@@ -79,6 +79,20 @@ return require("packer").startup(function(use)
     event = "VimEnter",
     config = function()
       local wk = require "which-key"
+      function ToggleCopyMode()
+        if not vim.g.default_mouse_mode then
+          vim.g.default_mouse_mode = vim.opt.mouse:get()
+        end
+
+        if next(vim.opt.mouse:get()) == nil then
+          vim.opt.mouse = vim.g.default_mouse_mode
+        else
+          vim.opt.mouse = {}
+        end
+        vim.opt.list = not (vim.opt.list:get())
+        vim.api.nvim_command "IndentBlanklineToggle"
+        vim.api.nvim_command "ToggleDiag"
+      end
       wk.register({
         e = {
           name = "Edit",
@@ -98,11 +112,6 @@ return require("packer").startup(function(use)
           T = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
           u = { "<cmd>UrlView<cr>", "Find URLs" },
         },
-        d = {
-          name = "Display",
-          l = { "<cmd>:set list!<cr>" },
-          p = { "<cmd>:set paste!<cr>" },
-        },
         g = {
           name = "Git",
           v = { "<cmd>OpenInGHFileLines<cr>", "Open in GitHub" },
@@ -121,7 +130,10 @@ return require("packer").startup(function(use)
         },
         t = {
           name = "Toggle",
+          c = { "<cmd>lua ToggleCopyMode()<cr>", "Toggle Copy Mode" },
           f = { "<cmd>NvimTreeToggle<cr>", "Toggle File Tree" },
+          n = { "<cmd>set number!<cr>", "Toggle Number" },
+          p = { "<cmd>set paste!<cr>", "Toggele Paste" },
           u = { "<cmd>UndotreeToggle<cr>", "Toggle Undo Tree" },
         },
         w = {
@@ -299,6 +311,14 @@ return require("packer").startup(function(use)
 
       require("lsp_signature").setup(config)
       require("lsp_signature").on_attach(config)
+    end,
+  }
+
+  use {
+    "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
+    event = "VimEnter",
+    config = function()
+      require("toggle_lsp_diagnostics").init {}
     end,
   }
 
