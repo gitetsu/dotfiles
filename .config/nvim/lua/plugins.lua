@@ -112,7 +112,6 @@ return require("packer").startup(function(use)
           a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
           d = { "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", "Go To Definition(Preview)" },
           D = { "<cmd>split | lua vim.lsp.buf.definition()<cr>", "Go To Definition(New Window)" },
-          e = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle lsp_lines" },
           k = { "<cmd>lua require('lsp_signature').toggle_float_win()<cr>", "Toggle lsp_signature" },
         },
         s = {
@@ -604,17 +603,6 @@ return require("packer").startup(function(use)
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
       }
-    end,
-  }
-
-  use {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    event = "BufEnter",
-    config = function()
-      vim.diagnostic.config {
-        virtual_text = false,
-      }
-      require("lsp_lines").setup()
     end,
   }
 
