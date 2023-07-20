@@ -69,7 +69,7 @@ end
 -- normal
 nnoremap("j", "gj")
 nnoremap("k", "gk")
-map("gj", "<cmd>lua require'flash'.jump({search = { forward = true, wrap = true, multi_window = false }})<cr>", {})
+map("gj", "<cmd>lua require'flash'.jump({search = { forward = true, wrap = true, multi_window = true }})<cr>", {})
 map("gk", "<cmd>lua require('flash').treesitter({})<cr>", {})
 
 -- insert/command
