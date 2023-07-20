@@ -49,6 +49,8 @@
 	navigate = true
 	line-numbers = true
 	side-by-side = true
+	true-color = always
+	syntax-theme = Coldark-Dark
 [merge]
 	conflictstyle = diff3
 [diff]
