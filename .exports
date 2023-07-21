@@ -5,7 +5,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 
 export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/homebrew-bundle/Brewfile
 
-export DOT_BASE_DIR=`dirname $(readlink $0)` # for fzf-edit-dotfiles
+export DOT_BASE_DIR=$HOME # for fzf-edit-dotfiles
 export FZF_DEFAULT_OPTS='--height=40% --layout=reverse --bind=ctrl-j:accept,ctrl-k:kill-line,alt-n:preview-page-down,alt-p:preview-page-up --cycle --select-1 --exit-0 --preview "bat -r 0:100 --color=always {}"'
 export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
