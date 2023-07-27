@@ -701,23 +701,30 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    "tomasr/molokai",
-  },
-  {
     "ray-x/starry.nvim",
+    config = function()
+      vim.g.starry_disable_background = true
+    end,
   },
   {
     "folke/tokyonight.nvim",
-  },
-  {
-    "kartikp10/noctis.nvim",
-    dependencies = { "rktjmp/lush.nvim" },
+    config = function()
+      require("tokyonight").setup {
+        transparent = true,
+      }
+    end,
   },
   {
     "sainnhe/sonokai",
+    config = function()
+      vim.g.sonokai_transparent_background = true
+    end,
   },
   {
     "Yazeed1s/minimal.nvim",
+    config = function()
+      vim.g.minimal_transparent_background = true
+    end,
   },
   {
     "catppuccin/nvim",
@@ -740,16 +747,20 @@ require("lazy").setup({
     end,
   },
   {
-    "glepnir/zephyr-nvim",
-  },
-  {
-    "mastertinner/nvim-quantum",
-  },
-  {
     "marko-cerovac/material.nvim",
+    config = function()
+      require("material").setup {
+        disable = {
+          background = true,
+        },
+      }
+    end,
   },
   {
     "Th3Whit3Wolf/one-nvim",
+    config = function()
+      vim.g.one_nvim_transparent_bg = true
+    end,
   },
   {
     "navarasu/onedark.nvim",
@@ -762,6 +773,13 @@ require("lazy").setup({
   },
   {
     "rmehri01/onenord.nvim",
+    config = function()
+      require("onenord").setup {
+        disable = {
+          background = true,
+        },
+      }
+    end,
   },
   {
     "maxmx03/FluoroMachine.nvim",
@@ -772,7 +790,6 @@ require("lazy").setup({
       fm.setup {
         transparent = true,
       }
-      vim.cmd "colorscheme fluoromachine"
     end,
   },
   {
@@ -783,18 +800,20 @@ require("lazy").setup({
       }
     end,
   },
-  {
-    "RRethy/nvim-base16",
-  },
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   event = "VimEnter",
-  --   require("kanagawa").setup {
-  --     transparent = true,
-  --   },
-  -- },
+--  {
+--    "rebelot/kanagawa.nvim",
+--    event = "VimEnter",
+--    require("kanagawa").setup {
+--      transparent = true,
+--    },
+--  },
   {
     "JoosepAlviste/palenightfall.nvim",
+    config = function()
+      require("palenightfall").setup {
+        transparent = true,
+      }
+    end,
   },
   {
     "Yagua/nebulous.nvim",
