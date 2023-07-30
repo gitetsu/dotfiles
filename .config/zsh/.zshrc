@@ -90,7 +90,6 @@ bindkey '^p' history-beginning-search-backward
 bindkey '^n' history-beginning-search-forward
 bindkey '^x^d' kill-word
 
-source ~/.exports
 source ~/.aliases
 source ~/.functions
 
