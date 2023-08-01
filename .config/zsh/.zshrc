@@ -1,52 +1,41 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+
+if [[ ! -f $XDG_DATA_HOME/antidote/antidote.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}antidote%F{220} Initiative Plugin Manager (%F{33}mattmc3/antidote%F{220})…%f"
+    command mkdir -p "$XDG_DATA_HOME/antidote" && command chmod g-rwX "$XDG_DATA_HOME/antidote"
+    command git clone --depth=1 https://github.com/mattmc3/antidote.git "$XDG_DATA_HOME/antidote" && \
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-### End of Zinit's installer chunk
+zstyle ':antidote:bundle' use-friendly-names 'yes'
 
-zinit wait lucid light-mode for \
-  atinit"zicompinit; zicdreplay" \
-      zdharma-continuum/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start" \
-      zsh-users/zsh-autosuggestions \
-  blockf atload'zicompinit; zicdreplay' \
-      zsh-users/zsh-completions
+source $XDG_DATA_HOME/antidote/antidote.zsh
 
-zinit wait'0' light-mode lucid for \
-  mattmc3/zman \
-  mafredri/zsh-async \
-  zdharma-continuum/history-search-multi-word \
-  jasonmccreary/git-trim \
-  atload"_anyframe-config" \
-    mollifier/anyframe \
-  atload"bindkey '^x^e' emoji::cli" \
-    b4b4r07/emoji-cli \
-  b4b4r07/enhancd \
-  hlissner/zsh-autopair \
-  atload'_fzf-widgets-config' \
-    ytet5uy4/fzf-widgets \
-  atinit"alias gdc='gd --cached'" \
-    wfxr/forgit \
-  atload"bindkey '^x^f' zce" \
-    hchbaw/zce.zsh \
-    zpm-zsh/undollar
+# Set the name of the static .zsh plugins file antidote will generate.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
+
+# Ensure you have a .zsh_plugins.txt file where you can add plugins.
+[[ -f ${zsh_plugins:r}.txt ]] || touch ${zsh_plugins:r}.txt
+
+# Lazy-load antidote.
+fpath+=($XDG_DATA_HOME/antidote)
+autoload -Uz $fpath[-1]/antidote
+
+# Generate static file in a subshell when .zsh_plugins.txt is updated.
+if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
+  (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
+fi
+
+# Source your static plugins file.
+source $zsh_plugins
 
 _anyframe-config () {
   zle -N _anyframe-gitmoji
-  bindkey '^[ig' _anyframe-gitmoji
   zle -N _anyframe-edit-yadm-files
-  bindkey '^[e.' _anyframe-edit-yadm-files
 }
+zsh-defer _anyframe-config
 
 _anyframe-gitmoji () {
   gitmoji -l \
@@ -58,18 +47,26 @@ _anyframe-gitmoji () {
 
 _anyframe-edit-yadm-files () {
   yadm list -a \
+    | awk -v "home=$HOME" '{printf "%s/%s\n", home, $1}' \
     | anyframe-selector-auto \
-    | awk -v home=$HOME '{printf "%s/%s", home, $1}' \
     | anyframe-action-execute $EDITOR --
 }
 
-_fzf-widgets-config () {
-  bindkey '^[ds' fzf-select-docker-widget
+_bindkeys () {
+  bindkey -e
+
+  bindkey '^p' history-beginning-search-backward
+  bindkey '^n' history-beginning-search-forward
+  bindkey '^x^d' kill-word
+  bindkey '^m' autosuggest-execute
+
+  bindkey '^[ds'  fzf-select-docker-widget
   bindkey '^[dc' fzf-docker-remove-containers
   bindkey '^[di' fzf-docker-remove-images
   bindkey '^[dv' fzf-docker-remove-volumes
 
   bindkey '^[ef' fzf-edit-files
+  bindkey '^[e.' _anyframe-edit-yadm-files
 
   bindkey '^[gs' fzf-select-git-widget
   bindkey '^[ga' fzf-git-add-files
@@ -79,16 +76,13 @@ _fzf-widgets-config () {
 
   bindkey '^[if' fzf-insert-files
   bindkey '^[id' fzf-insert-directory
+  bindkey '^[ig' _anyframe-gitmoji
 
   bindkey '^[kp' fzf-kill-processes
 
   bindkey '^[ss' fzf-exec-ssh
 }
-
-bindkey -e
-bindkey '^p' history-beginning-search-backward
-bindkey '^n' history-beginning-search-forward
-bindkey '^x^d' kill-word
+zsh-defer _bindkeys
 
 source ~/.aliases
 source ~/.functions
@@ -114,8 +108,8 @@ autoload run-help
 
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
-if [[ -f $ZDOTDIR/local.zshrc ]]; then
-  source $ZDOTDIR/local.zshrc
+if [[ -f $ZDOTDIR/.zshrc.local ]]; then
+  source $ZDOTDIR/.zshrc.local
 fi
 
 if [ -e $(brew --prefix)/share/zsh-completions ]; then
@@ -131,10 +125,10 @@ if (( $+commands[starship] )); then
 fi
 
 if (( $+commands[asdf] )); then
-  export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
-  export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/asdfrc"
   . $(brew --prefix)/opt/asdf/libexec/asdf.sh
 fi
+
+source $XDG_CONFIG_HOME/broot/launcher/bash/br
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

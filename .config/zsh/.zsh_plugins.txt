@@ -1,0 +1,15 @@
+zdharma-continuum/fast-syntax-highlighting kind:defer
+zsh-users/zsh-autosuggestions kind:defer
+zsh-users/zsh-completions kind:defer
+mattmc3/zman kind:defer
+mafredri/zsh-async
+zdharma-continuum/history-search-multi-word kind:defer
+jasonmccreary/git-trim kind:defer
+mollifier/anyframe kind:defer
+b4b4r07/emoji-cli kind:defer
+b4b4r07/enhancd kind:defer
+hlissner/zsh-autopair kind:defer
+ytet5uy4/fzf-widgets kind:defer
+wfxr/forgit kind:defer
+hchbaw/zce.zsh kind:defer
+zpm-zsh/undollar kind:defer
