@@ -5,6 +5,8 @@ export XDG_STATE_HOME=$HOME/.local/state
 
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
+export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
+export ASDF_CONFIG_FILE=$XDG_CONFIG_HOME/asdf/asdfrc
 
 export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/homebrew-bundle/Brewfile
 
