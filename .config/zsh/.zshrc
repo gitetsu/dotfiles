@@ -11,6 +11,8 @@ fi
 
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 
+bindkey -e
+
 source $XDG_DATA_HOME/antidote/antidote.zsh
 
 # Set the name of the static .zsh plugins file antidote will generate.
@@ -53,8 +55,6 @@ _anyframe-edit-yadm-files () {
 }
 
 _bindkeys () {
-  bindkey -e
-
   bindkey "^r" history-search-multi-word
   bindkey '^p' history-beginning-search-backward
   bindkey '^n' history-beginning-search-forward
