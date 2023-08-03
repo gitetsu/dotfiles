@@ -78,6 +78,8 @@ config = {
 
   exit_behavior = "Close",
 
+  enable_csi_u_key_encoding = true,
+
   leader = { key = "t", mods = "CTRL" },
   keys = {
     { key = "t", mods = "LEADER|CTRL", action = act { SendKey = { key = "t", mods = "CTRL" } } },

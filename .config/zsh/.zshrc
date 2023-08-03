@@ -59,7 +59,8 @@ _bindkeys () {
   bindkey '^p' history-beginning-search-backward
   bindkey '^n' history-beginning-search-forward
   bindkey '^x^d' kill-word
-  # bindkey '^m' autosuggest-execute
+  # ^M under csi-u
+  bindkey '^[[109;5u' autosuggest-execute
 
   bindkey '^[ds'  fzf-select-docker-widget
   bindkey '^[dc' fzf-docker-remove-containers
