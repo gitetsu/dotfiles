@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
 if [[ ! -f $XDG_DATA_HOME/antidote/antidote.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}antidote%F{220} Initiative Plugin Manager (%F{33}mattmc3/antidote%F{220})…%f"
@@ -59,8 +59,11 @@ _bindkeys () {
   bindkey '^p' history-beginning-search-backward
   bindkey '^n' history-beginning-search-forward
   bindkey '^x^d' kill-word
-  # ^M under csi-u
+  bindkey '^x^f' zce
+  # ^m
   bindkey '^[[109;5u' autosuggest-execute
+  # ^i
+  bindkey '^[[105;5u' menu-select
 
   bindkey '^[ds'  fzf-select-docker-widget
   bindkey '^[dc' fzf-docker-remove-containers
@@ -109,6 +112,7 @@ setopt correct
 autoload run-help
 
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' list-colors ''
 
 if [[ -f $ZDOTDIR/.zshrc.local ]]; then
   source $ZDOTDIR/.zshrc.local
@@ -131,6 +135,15 @@ if (( $+commands[asdf] )); then
 fi
 
 source $XDG_CONFIG_HOME/broot/launcher/bash/br
-
 # Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+autoload -Uz compinit
+compinit
+
+# avoid freezing
+# marlonrichert/zsh-autocomplete or zsh-users/zsh-autosuggestions
+# maybe related to https://github.com/zsh-users/zsh-autosuggestions/issues/751
+ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
+  $ZSH_AUTOSUGGEST_IGNORE_WIDGETS
+)
