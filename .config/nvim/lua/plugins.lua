@@ -719,6 +719,14 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
+    "sustech-data/wildfire.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("wildfire").setup()
+    end,
+  },
+  {
     "ray-x/starry.nvim",
     config = function()
       vim.g.starry_disable_background = true
