@@ -452,12 +452,12 @@ require("lazy").setup({
   {
     "mfussenegger/nvim-treehopper",
   },
-  {
-    "Dkendal/nvim-treeclimber",
-    config = function()
-      require("nvim-treeclimber").setup()
-    end,
-  },
+  -- {
+  --   "Dkendal/nvim-treeclimber",
+  --   config = function()
+  --     require("nvim-treeclimber").setup()
+  --   end,
+  -- },
   {
     -- TODO tag
     "kylechui/nvim-surround",
