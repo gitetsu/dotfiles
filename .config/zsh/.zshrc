@@ -122,6 +122,10 @@ if [ -e $(brew --prefix)/share/zsh-completions ]; then
   fpath=($(brew --prefix)/share/zsh-completions $fpath)
 fi
 
+if [ -e $(brew --prefix)/share/zsh/site-functions ]; then
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fi
+
 if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
