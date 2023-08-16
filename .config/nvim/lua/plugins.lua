@@ -89,7 +89,7 @@ require("lazy").setup({
           G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
           r = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent Files" },
           s = { "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<cr>", "Find Snippets" },
-          t = { "<cmd>NvimTreeFindFile<cr>", "Find In Tree" },
+          t = { "<cmd>Oil --float<cr>", "Find In Tree" },
           T = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
           u = { "<cmd>UrlView<cr>", "Find URLs" },
         },
@@ -140,6 +140,24 @@ require("lazy").setup({
         },
         renderer = {
           group_empty = true,
+        },
+      }
+    end,
+  },
+  {
+    "stevearc/oil.nvim",
+    config = function()
+      require("oil").setup {
+        keymaps = {
+          ["q"] = "actions.close",
+          ["<C-v>"] = "actions.select_vsplit",
+          ["<C-x>"] = "actions.select_split",
+        },
+        view_options = {
+          show_hidden = true,
+        },
+        float = {
+          padding = 20,
         },
       }
     end,
