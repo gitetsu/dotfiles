@@ -82,6 +82,7 @@ require("lazy").setup({
         f = {
           name = "Find",
           b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Find Buffers" },
+          c = { "<cmd>lua require('telescope.builtin').colorscheme()<cr>", "Find Colorschemes" },
           B = { "<cmd>lua require('browse').open_bookmarks({ bookmarks = bookmarks })<cr>", "Find Buffers" },
           f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find Files" },
           F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<cr>", "Find All Files" },
