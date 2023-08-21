@@ -959,7 +959,19 @@ require("lazy").setup({
     end,
   },
   {
-    "github/copilot.vim",
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        suggestion = {
+          enabled = true,
+          keymap = {
+            accept = "<C-i>",
+          },
+        },
+      }
+    end,
   },
   {
     "almo7aya/openingh.nvim",
