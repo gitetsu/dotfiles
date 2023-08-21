@@ -449,9 +449,6 @@ require("lazy").setup({
   {
     "kana/vim-smartchr",
   },
-  {
-    "mfussenegger/nvim-treehopper",
-  },
   -- {
   --   "Dkendal/nvim-treeclimber",
   --   config = function()
