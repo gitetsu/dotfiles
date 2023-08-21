@@ -95,7 +95,7 @@ require("lazy").setup({
           r = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent Files" },
           s = { "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<cr>", "Find Snippets" },
           t = { "<cmd>Oil --float<cr>", "Find In Tree" },
-          T = { "<cmd>NvimTreeToggle<cr>", "Toogle Tree" },
+          T = { "<cmd>execute 'Oil --float' getcwd()<cr>", "Toogle Tree" },
           u = { "<cmd>UrlView<cr>", "Find URLs" },
         },
         g = {
