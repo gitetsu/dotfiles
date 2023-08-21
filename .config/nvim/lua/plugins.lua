@@ -28,6 +28,9 @@ require("lazy").setup({
         "nvim-telescope/telescope-symbols.nvim",
       },
       {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+      },
+      {
         "benfowler/telescope-luasnip.nvim",
       },
       "smartpde/telescope-recent-files",
@@ -37,6 +40,7 @@ require("lazy").setup({
       local telescope = require "telescope"
       local actions = require "telescope.actions"
       telescope.load_extension "fzf"
+      telescope.load_extension "live_grep_args"
       telescope.load_extension "luasnip"
       telescope.load_extension "recent_files"
       telescope.setup {
@@ -86,7 +90,7 @@ require("lazy").setup({
           B = { "<cmd>lua require('browse').open_bookmarks({ bookmarks = bookmarks })<cr>", "Find Buffers" },
           f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find Files" },
           F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<cr>", "Find All Files" },
-          g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Grep Files" },
+          g = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Grep Files" },
           G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
           r = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent Files" },
           s = { "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<cr>", "Find Snippets" },
