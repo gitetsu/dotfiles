@@ -311,7 +311,7 @@ require("lazy").setup({
   },
   {
     "j-hui/fidget.nvim",
-    version = "legacy",
+    tag = "legacy",
     config = function()
       require("fidget").setup {}
     end,
@@ -418,7 +418,7 @@ require("lazy").setup({
   },
   {
     "numToStr/Comment.nvim",
-    keys = { "gc", "gcc" },
+    event = "VeryLazy",
     config = function()
       require("Comment").setup {}
     end,
@@ -926,7 +926,7 @@ require("lazy").setup({
   },
   {
     "akinsho/nvim-toggleterm.lua",
-    keys = { "<C-Space>" },
+    event = "VeryLazy",
     config = function()
       require("toggleterm").setup {
         open_mapping = [[<c-space>]],
