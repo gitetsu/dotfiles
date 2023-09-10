@@ -816,13 +816,13 @@ require("lazy").setup({
       }
     end,
   },
---  {
---    "rebelot/kanagawa.nvim",
---    event = "VimEnter",
---    require("kanagawa").setup {
---      transparent = true,
---    },
---  },
+  --  {
+  --    "rebelot/kanagawa.nvim",
+  --    event = "VimEnter",
+  --    require("kanagawa").setup {
+  --      transparent = true,
+  --    },
+  --  },
   {
     "JoosepAlviste/palenightfall.nvim",
     config = function()
