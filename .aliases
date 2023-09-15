@@ -1,6 +1,6 @@
-if type exa > /dev/null 2>&1; then
-  alias l="exa -lgF"
-  alias la="exa -lgaF"
+if type eza > /dev/null 2>&1; then
+  alias l="eza -lgF"
+  alias la="eza -lgaF"
 else
   if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
