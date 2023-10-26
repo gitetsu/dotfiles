@@ -192,20 +192,32 @@ require("lazy").setup({
   },
   {
     "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    lazy = false,
     config = function()
       require("lualine").setup {
         options = {
           icons_enabled = true,
         },
         sections = {
-          lualine_b = {
+          lualine_b = {},
+          lualine_c = {
             {
               "filename",
-              path = 1,
+              path = 4,
             },
           },
-          lualine_c = {},
           lualine_x = { "branch", "diff", "diagnostics", "encoding", "fileformat", "filetype" },
+        },
+        inactive_sections = {
+          lualine_c = {
+            {
+              "filename",
+              path = 4,
+            },
+          },
         },
       }
     end,
