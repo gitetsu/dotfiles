@@ -29,6 +29,7 @@ cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
 -- search
 opt.ignorecase = true
 opt.smartcase = true
+opt.gdefault = true
 
 opt.splitright = true
 
