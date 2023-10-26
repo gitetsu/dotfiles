@@ -152,10 +152,12 @@ require("lazy").setup({
   },
   {
     "stevearc/oil.nvim",
+    event = "VeryLazy",
     config = function()
       require("oil").setup {
         keymaps = {
           ["q"] = "actions.close",
+          ["<esc>"] = "actions.close",
           ["<C-v>"] = "actions.select_vsplit",
           ["<C-x>"] = "actions.select_split",
         },
