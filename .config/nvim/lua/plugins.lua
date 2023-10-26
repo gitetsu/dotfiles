@@ -92,6 +92,7 @@ require("lazy").setup({
           F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<cr>", "Find All Files" },
           g = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Grep Files" },
           G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
+          j = { "<cmd>OverseerRun<cr>", "Find Jobs" },
           r = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent Files" },
           s = { "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<cr>", "Find Snippets" },
           t = { "<cmd>Oil --float<cr>", "Find In Tree" },
@@ -978,6 +979,11 @@ require("lazy").setup({
   },
   {
     "almo7aya/openingh.nvim",
+  },
+  {
+    "stevearc/overseer.nvim",
+    opts = {},
+    event = "VeryLazy",
   },
 }, {
   defaults = {
