@@ -120,6 +120,7 @@ require("lazy").setup({
           f = { "<cmd>NvimTreeToggle<cr>", "Toggle File Tree" },
           n = { "<cmd>set number!<cr>", "Toggle Number" },
           p = { "<cmd>set paste!<cr>", "Toggele Paste" },
+          r = { "<cmd>RegexplainerToggle<cr>", "Toggele Regexplainer" },
           u = { "<cmd>UndotreeToggle<cr>", "Toggle Undo Tree" },
         },
         w = {
@@ -320,6 +321,19 @@ require("lazy").setup({
     "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
     config = function()
       require("toggle_lsp_diagnostics").init {}
+    end,
+  },
+  {
+    "bennypowers/nvim-regexplainer",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "MunifTanjim/nui.nvim",
+    },
+    event = "VeryLazy",
+    config = function()
+      require("regexplainer").setup {
+        auto = true,
+      }
     end,
   },
   {
