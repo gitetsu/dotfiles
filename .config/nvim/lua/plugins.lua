@@ -118,6 +118,8 @@ require("lazy").setup({
           name = "Toggle",
           c = { "<cmd>lua ToggleCopyMode()<cr>", "Toggle Copy Mode" },
           f = { "<cmd>NvimTreeToggle<cr>", "Toggle File Tree" },
+          k = { "<cmd>HiMyWordsToggle<cr>", "Toggle Hightlight Word Under Cursor" },
+          K = { "<cmd>HiMyWordsClear<cr>", "Clear All Highlights" },
           n = { "<cmd>set number!<cr>", "Toggle Number" },
           p = { "<cmd>set paste!<cr>", "Toggele Paste" },
           r = { "<cmd>RegexplainerToggle<cr>", "Toggele Regexplainer" },
@@ -428,6 +430,13 @@ require("lazy").setup({
       require("auto-hlsearch").setup {
         create_commands = false,
       }
+    end,
+  },
+  {
+    "dvoytik/hi-my-words.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("hi-my-words").setup {}
     end,
   },
   {
