@@ -74,7 +74,7 @@ require("lazy").setup({
           vim.opt.mouse = {}
         end
         vim.opt.list = not (vim.opt.list:get())
-        vim.api.nvim_command "IndentBlanklineToggle"
+        vim.api.nvim_command "IBLToggle"
         vim.api.nvim_command "ToggleDiag"
       end
       wk.register({
@@ -187,7 +187,11 @@ require("lazy").setup({
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     config = function()
-      require("ibl").setup {}
+      require("ibl").setup {
+        indent = {
+          char = "▏",
+        },
+      }
     end,
   },
   {
@@ -1019,10 +1023,10 @@ require("lazy").setup({
     config = function()
       require("copilot").setup {
         suggestion = {
-          enabled = true,
           auto_trigger = true,
           keymap = {
             accept = "<C-i>",
+            accept_word = "<Tab>",
           },
         },
       }

@@ -23,6 +23,7 @@ opt.listchars = "tab:▸ ,extends:_,trail:-,eol:↩"
 opt.signcolumn = "yes"
 opt.wrap = false
 opt.termguicolors = true
+opt.pumheight = 15
 
 cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
 
