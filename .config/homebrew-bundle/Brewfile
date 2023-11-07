@@ -156,6 +156,7 @@ brew "ssh-copy-id", link: true
 brew "starship"
 brew "stylua"
 brew "surfraw"
+brew "tailspin"
 brew "tealdeer"
 brew "telnet"
 brew "terraform"
