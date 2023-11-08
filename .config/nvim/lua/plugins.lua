@@ -33,7 +33,12 @@ require("lazy").setup({
       {
         "benfowler/telescope-luasnip.nvim",
       },
-      "smartpde/telescope-recent-files",
+      {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+          require("telescope").load_extension "frecency"
+        end,
+      },
     },
     cmd = { "Telescope" },
     config = function()
@@ -42,7 +47,6 @@ require("lazy").setup({
       telescope.load_extension "fzf"
       telescope.load_extension "live_grep_args"
       telescope.load_extension "luasnip"
-      telescope.load_extension "recent_files"
       telescope.setup {
         defaults = {
           sorting_strategy = "ascending",
@@ -93,7 +97,7 @@ require("lazy").setup({
           g = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Grep Files" },
           G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
           j = { "<cmd>OverseerRun<cr>", "Find Jobs" },
-          r = { "<cmd>lua require('telescope').extensions.recent_files.pick()<cr>", "Recent Files" },
+          r = { "<cmd>Telescope frecency<cr>", "Recent Files" },
           s = { "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<cr>", "Find Snippets" },
           t = { "<cmd>Oil --float<cr>", "Find In Tree" },
           T = { "<cmd>execute 'Oil --float' getcwd()<cr>", "Toogle Tree" },
