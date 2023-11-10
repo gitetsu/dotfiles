@@ -39,6 +39,12 @@ require("lazy").setup({
           require("telescope").load_extension "frecency"
         end,
       },
+      {
+        "molecule-man/telescope-menufacture",
+        config = function()
+          require("telescope").load_extension "menufacture"
+        end,
+      },
     },
     cmd = { "Telescope" },
     config = function()
@@ -89,10 +95,10 @@ require("lazy").setup({
         },
         f = {
           name = "Find",
-          b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Find Buffers" },
+          b = { "<cmd>lua require('telescope').extensions.menufacture.buffers()<cr>", "Find Buffers" },
           c = { "<cmd>lua require('telescope.builtin').colorscheme()<cr>", "Find Colorschemes" },
           B = { "<cmd>lua require('browse').open_bookmarks({ bookmarks = bookmarks })<cr>", "Find Buffers" },
-          f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find Files" },
+          f = { "<cmd>lua require('telescope').extensions.menufacture.find_files()<cr>", "Find Files" },
           F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore=true})<cr>", "Find All Files" },
           g = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Grep Files" },
           G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
