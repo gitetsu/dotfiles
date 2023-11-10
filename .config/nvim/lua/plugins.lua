@@ -654,6 +654,13 @@ require("lazy").setup({
     end,
   },
   {
+    "tzachar/highlight-undo.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("highlight-undo").setup {}
+    end,
+  },
+  {
     "folke/flash.nvim",
     config = function()
       require("flash").setup {
