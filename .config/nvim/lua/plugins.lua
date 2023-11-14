@@ -45,6 +45,12 @@ require("lazy").setup({
           require("telescope").load_extension "menufacture"
         end,
       },
+      {
+        "nvim-telescope/telescope-file-browser.nvim",
+        config = function()
+          require("telescope").load_extension "file_browser"
+        end,
+      },
     },
     cmd = { "Telescope" },
     config = function()
@@ -92,6 +98,8 @@ require("lazy").setup({
           name = "Edit",
           j = { "<cmd>lua require('ts-node-action').node_action()<cr>", "Node Action" },
           J = { "<cmd>TSJToggle<cr>", "Toggle Split / Join" },
+          t = { "<cmd>Oil --float<cr>", "Edit Current Buffer Tree" },
+          T = { "<cmd>execute 'Oil --float' getcwd()<cr>", "Edit Current Tree" },
         },
         f = {
           name = "Find",
@@ -105,8 +113,8 @@ require("lazy").setup({
           j = { "<cmd>OverseerRun<cr>", "Find Jobs" },
           r = { "<cmd>Telescope frecency<cr>", "Recent Files" },
           s = { "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<cr>", "Find Snippets" },
-          t = { "<cmd>Oil --float<cr>", "Find In Tree" },
-          T = { "<cmd>execute 'Oil --float' getcwd()<cr>", "Toogle Tree" },
+          t = { "<cmd>Telescope file_browser<cr>", "Find In Current Buffer Tree" },
+          T = { "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", "Find In Current Directory Tree" },
           u = { "<cmd>UrlView<cr>", "Find URLs" },
         },
         g = {
