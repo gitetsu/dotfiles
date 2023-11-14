@@ -112,6 +112,7 @@ require("lazy").setup({
           G = { "<cmd>lua require('telescope.builtin').live_grep({no_ignore=true})<cr>", "Grep All Files" },
           j = { "<cmd>OverseerRun<cr>", "Find Jobs" },
           r = { "<cmd>Telescope frecency<cr>", "Recent Files" },
+          R = { "<cmd>lua require('flash').treesitter()<cr>", "Find Region" },
           s = { "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<cr>", "Find Snippets" },
           t = { "<cmd>Telescope file_browser<cr>", "Find In Current Buffer Tree" },
           T = { "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", "Find In Current Directory Tree" },
@@ -670,6 +671,7 @@ require("lazy").setup({
   },
   {
     "folke/flash.nvim",
+    event = "VeryLazy",
     config = function()
       require("flash").setup {
         label = {
