@@ -31,8 +31,8 @@
                  [:!Td :delete_forward]
                  [:!Tb :left_arrow]
                  [:!Tf :right_arrow]
-                 [:!Ta :home]
-                 [:!Te :end]
+                 [:!Ta :!Cleft_arrow]
+                 [:!Te :!Cright_arrow]
                  [:!Tp :up_arrow]
                  [:!Tn :down_arrow]
                  ]}
