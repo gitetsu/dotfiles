@@ -79,6 +79,11 @@ config = {
   exit_behavior = "Close",
 
   enable_csi_u_key_encoding = true,
+  quick_select_patterns = {
+    -- jujutsu revset
+    [[\b[k-z]{8,32}\b]],
+  },
+
 
   leader = { key = "t", mods = "CTRL" },
   keys = {
