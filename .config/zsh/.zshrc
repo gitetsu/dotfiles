@@ -92,6 +92,7 @@ zsh-defer _bindkeys
 source ~/.aliases
 source ~/.functions
 
+export HISTSIZE=100000
 export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
 setopt inc_append_history
 setopt share_history
