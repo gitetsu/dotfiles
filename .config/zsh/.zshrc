@@ -135,8 +135,9 @@ if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
-if (( $+commands[asdf] )); then
-  . $(brew --prefix)/opt/asdf/libexec/asdf.sh
+if (( $+commands[mise] )); then
+  eval "$(mise activate zsh)"
+  export PATH="$HOME/.local/share/mise/shims:$PATH"
 fi
 
 source $XDG_CONFIG_HOME/broot/launcher/bash/br
