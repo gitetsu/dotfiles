@@ -92,6 +92,7 @@ zsh-defer _bindkeys
 source ~/.aliases
 source ~/.functions
 
+export HISTSIZE=100000
 export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
 setopt inc_append_history
 setopt share_history
@@ -134,8 +135,9 @@ if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
-if (( $+commands[asdf] )); then
-  . $(brew --prefix)/opt/asdf/libexec/asdf.sh
+if (( $+commands[mise] )); then
+  eval "$(mise activate zsh)"
+  export PATH="$HOME/.local/share/mise/shims:$PATH"
 fi
 
 source $XDG_CONFIG_HOME/broot/launcher/bash/br
