@@ -73,6 +73,16 @@ config = {
   initial_cols = 300,
   window_decorations = "RESIZE",
   tab_bar_at_bottom = true,
+  show_new_tab_button_in_tab_bar = false,
+  window_frame = {
+    inactive_titlebar_bg = "none",
+    active_titlebar_bg = "none",
+  },
+  colors = {
+    tab_bar = {
+      inactive_tab_edge = "none",
+    },
+  },
   window_padding = { bottom = 0 },
   scrollback_lines = 10000,
 
