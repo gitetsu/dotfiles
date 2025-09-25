@@ -94,7 +94,6 @@ config = {
     [[\b[k-z]{8,32}\b]],
   },
 
-
   leader = { key = "t", mods = "CTRL" },
   keys = {
     { key = "t", mods = "LEADER|CTRL", action = act { SendKey = { key = "t", mods = "CTRL" } } },
