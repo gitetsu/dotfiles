@@ -38,9 +38,6 @@ end)
 hs.hotkey.bind(modifier(), "g", function()
   focusWithMouse "Brave Browser"
 end)
-hs.hotkey.bind(modifier(), "i", function()
-  focusWithMouse "WezTerm"
-end)
 hs.hotkey.bind(modifier(), "k", function()
   focusWithMouse "Kindle"
 end)
@@ -55,6 +52,9 @@ hs.hotkey.bind(modifier(), "o", function()
 end)
 hs.hotkey.bind(modifier(), "s", function()
   focusWithMouse "System Preferences"
+end)
+hs.hotkey.bind(modifier(), "t", function()
+  focusWithMouse "WezTerm"
 end)
 hs.hotkey.bind(modifier(), "v", function()
   focusWithMouse "MacVim"
