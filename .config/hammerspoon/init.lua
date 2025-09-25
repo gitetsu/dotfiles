@@ -23,6 +23,9 @@ end)
 hs.hotkey.bind(modifier(), "b", function()
   focusWithMouse "Vivaldi"
 end)
+hs.hotkey.bind(modifier(), "c", function()
+  focusWithMouse "ChatGPT"
+end)
 hs.hotkey.bind(modifier(), "d", function()
   focusWithMouse "Dictionary"
 end)
