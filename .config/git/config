@@ -39,6 +39,8 @@
 	root = ~/repos
 [user]
 	useConfigOnly = true
+	name = gitetsu
+	email = gitetsu@users.noreply.github.com
 [rebase]
 	autostash = true
 [fetch]
