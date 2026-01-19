@@ -3,6 +3,14 @@
 
 set -eu
 
+# git
+xcode-select --install
+
+# homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+/opt/homebrew/bin/brew bundle --file ${XDG_CONFIG_HOME}/homebrew-bundle/Brewfile
+
 # tip
 local tip_path="${HOME}/Library/Application Scripts/tanin.tip/"
 mkdir -p "${tip_path}"
@@ -15,3 +23,5 @@ defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME}/hamm
 defaults write org.gpgtools.pinentry-mac UseKeychain -bool NO
 
 mkdir ${XDG_CACHE_HOME}/mycli/
+
+mkdir ${XDG_STATE_HOME}/zsh/
