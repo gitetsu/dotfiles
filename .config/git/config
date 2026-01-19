@@ -57,3 +57,5 @@
 	conflictstyle = diff3
 [diff]
 	colorMoved = default
+[help]
+	autoCorrect = prompt
