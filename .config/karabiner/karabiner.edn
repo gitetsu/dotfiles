@@ -22,6 +22,9 @@
  :main [{:des "Caps Lock to Escape on single press, Left Control on press and hold."
          :rules [[:##caps_lock :left_control nil {:alone :escape}]
                  ]}
+        {:des "Left Control to Escape on single press, Left Control on press and hold."
+          :rules [[:##left_control :left_control nil {:alone :escape}]
+                 ]}
         {:des "Emacs keybindings"
          :rules [:emacs-mode
                  [:condi :!disable-emacs-mode-apps]
@@ -52,9 +55,9 @@
                  [:##s ["mouse_keys_mode_v4_scroll" 1] nil {:afterup ["mouse_keys_mode_v4_scroll" 0]}]
                  [:##f {:mkey {:speed 2.0}}]
                  [:##g {:mkey {:speed 0.5}}]]}
-        {:des "Left Command to Eisuu(if alone), Right Command to Kana(if alone)"
+        {:des "Left Command to Eisuu(if alone), Right Command to Kana(if alone)/Right Alt(if held)"
          :rules [[:##left_command {:key :left_command :lazy true} nil {:alone :japanese_eisuu :held :left_command :params {:held 100}}]
-                 [:##right_command {:key :right_command :lazy true} nil {:alone :japanese_kana :held :right_command :params {:held 100}}]
+                 [:##right_command {:key :right_command :lazy true} nil {:alone :japanese_kana :held :right_alt :params {:held 100}}]
                  ]}
         ]
  }
