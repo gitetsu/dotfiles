@@ -1,6 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-# [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 if [[ ! -f $XDG_DATA_HOME/antidote/antidote.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}antidote%F{220} Initiative Plugin Manager (%F{33}mattmc3/antidote%F{220})…%f"
     command mkdir -p "$XDG_DATA_HOME/antidote" && command chmod g-rwX "$XDG_DATA_HOME/antidote"
@@ -141,8 +138,6 @@ if (( $+commands[mise] )); then
 fi
 
 source $XDG_CONFIG_HOME/broot/launcher/bash/br
-# Fig post block. Keep at the bottom of this file.
-# [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 autoload -Uz compinit
 compinit
