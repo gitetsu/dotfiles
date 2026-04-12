@@ -10,25 +10,11 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 bindkey -e
 
+# source antidote
 source $XDG_DATA_HOME/antidote/antidote.zsh
 
-# Set the name of the static .zsh plugins file antidote will generate.
-zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
-
-# Ensure you have a .zsh_plugins.txt file where you can add plugins.
-[[ -f ${zsh_plugins:r}.txt ]] || touch ${zsh_plugins:r}.txt
-
-# Lazy-load antidote.
-fpath+=($XDG_DATA_HOME/antidote)
-autoload -Uz $fpath[-1]/antidote
-
-# Generate static file in a subshell when .zsh_plugins.txt is updated.
-if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
-  (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
-fi
-
-# Source your static plugins file.
-source $zsh_plugins
+# initialize plugins statically with ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+antidote load
 
 _anyframe-config () {
   zle -N _anyframe-gitmoji
