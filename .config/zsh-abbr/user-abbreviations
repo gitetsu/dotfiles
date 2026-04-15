@@ -1,0 +1,8 @@
+abbr "b"="brew"
+abbr "brew c"="brew cleanup"
+abbr "brew i"="brew install"
+abbr "brew if"="brew info"
+abbr "brew l"="brew list"
+abbr "brew rm"="brew remove"
+abbr "brew s"="brew search"
+abbr "brew u"="brew upgrade"
