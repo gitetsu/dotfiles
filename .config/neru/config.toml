@@ -1,0 +1,37 @@
+# Only overrides; everything else uses Neru's built-in defaults.
+# See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md
+
+[hotkeys]
+"Primary+Shift+Space" = "hints --action left_click"
+# Move the cursor to the focused window first so the overlay opens on its display
+"Primary+Shift+G" = ["action move_mouse --window", "grid"]
+"Primary+Shift+C" = ["action move_mouse --window", "recursive_grid"]
+"Primary+Shift+B" = ["action move_mouse --window", "bisect"]
+
+[macros]
+click_and_exit = ["action left_click --bail-on-error", "idle"]
+
+[hints]
+include_menubar_hints = true
+
+[hints.hotkeys]
+"Enter" = "macro click_and_exit"
+
+[grid]
+max_label_length = 2
+
+[grid.hotkeys]
+"Enter" = "macro click_and_exit"
+
+[grid.ui]
+font_size = 12
+background_color = { light = "#73EEF2FF", dark = "#730A1338" }
+
+[recursive_grid.hotkeys]
+"Enter" = "macro click_and_exit"
+
+[bisect.hotkeys]
+"Enter" = "macro click_and_exit"
+
+[scroll.hotkeys]
+"Enter" = "macro click_and_exit"
